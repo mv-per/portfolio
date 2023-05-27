@@ -1,0 +1,29 @@
+<div class="repositoryCard">
+  <div class="languageGraph">
+    <canvas
+      *ngIf="showGraph"
+      baseChart
+      [data]="data"
+      style="width: 100px"
+      [type]="doughnutChartType"
+    >
+    </canvas>
+  </div>
+
+  <div class="info">
+    <div class="title">
+      {{ repositoryTitle }}
+    </div>
+    <div class="description">
+      {{ repository?.description }}
+    </div>
+    <div class="updated">Last update: {{ lastUpdateDate | date }}</div>
+    <a
+      pButton
+      icon="pi pi-github"
+      class="p-button-rounded buttonStyle"
+      href="{{ repository.html_url}}"
+      label="'See Repository'"
+    ></a>
+  </div>
+</div>

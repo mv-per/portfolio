@@ -1,0 +1,278 @@
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color:black;
+  color:white;
+  font-size: 2rem;
+}
+
+.grid {
+  // Styles for the Introduction section
+  .introduction {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 0 10% 0 10%;
+    display: flex;
+    flex-direction: row;
+    min-height: 75vh;
+
+    .text {
+      margin-bottom: 20px;
+
+      h1 {
+        font-size: 5em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      h2 {
+        font-size: 4em;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        font-size: 3em;
+      }
+
+      h4 {
+        font-size: 2.5em;
+      }
+
+      p {
+        font-size: 2em;
+      }
+    }
+
+    .profile-pic {
+      align-self: center;
+      // width: 40vh;
+      height: 40vh;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      margin-top: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-left: 20%;
+    }
+  }
+
+  // Styles for the Background section
+  .background {
+    background-color: #2980b9;
+    color: #fff;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: row;
+    min-height: 75vh;
+
+    .text {
+      margin-bottom: 20px;
+       padding: 0 10% 0 5%;
+
+      h2 {
+        font-size: 4em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        font-size: 2em;
+      }
+    }
+
+    img {
+      align-self: center;
+      // width: 200px;
+      max-height: 70vh;
+      border-radius: 10%;
+      object-fit: cover;
+      object-position: center;
+      // margin-bottom: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    }
+  }
+
+  // Styles for the Passion section
+  .passion {
+    background-color: #9b59b6;
+    color: #fff;
+    padding: 40px;
+    min-height: 75vh;
+
+    .text{
+      padding: 0 10%;
+
+      h2 {
+        font-size: 4em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        font-size: 2em;
+      }
+    }
+
+
+  }
+
+  // Styles for the Projects section
+  .projects {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 40px;
+    min-height: 75vh;
+
+    .text{
+      padding: 0 10%;
+      h2 {
+        font-size: 4em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        font-size: 2em;
+      }
+
+      a {
+        color: #fff;
+      }
+    }
+
+
+
+  }
+
+  // Styles for the Learning section
+  .learning {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 40px;
+    min-height: 75vh;
+
+    .text{
+      padding: 0 10%;
+    h2 {
+      font-size: 4em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      font-size: 2em;
+    }}
+  }
+
+
+  // Styles for the Closing section
+  .closing {
+    background-color: #c0392b;
+    color: #fff;
+    padding: 40px;
+    min-height: 75vh;
+
+    .text{
+      padding: 0 10%;
+    h4 {
+      font-size: 2.5em;
+    }}
+  }
+}
+
+
+// .grid{
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-template-rows: 75vh 100vh 100vh;
+
+//   section {
+//     padding: 0 2em;
+
+//   }
+//   section.introduction {
+//     display:flex;
+//     flex-direction: row;
+//     align-items: center;
+//     background-color: purple;
+//     color: white;
+
+//     .profile-pic {
+//       max-width: 30%;
+//       max-height: 30%;
+//       border-radius: 50%;
+//     }
+//   }
+
+//   section.background {
+
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: flex-end;
+//       margin: 10px;
+
+//       .text {
+//         padding: 0 10%;
+//       }
+//       img {
+//         max-height: 75vh;
+//         border-radius: 15%;
+//       }
+
+//   }
+
+//   section.passion {
+//     // display:flex;
+//     // flex-direction: row;
+//     align-items: center;
+//     background-color: purple;
+//     color: white;
+//     grid-row: 75vh;
+//     padding: 0 10%;
+
+//   }
+
+//   section.learning {
+//     // display:flex;
+//     // flex-direction: row;
+//     align-items: center;
+//     background-color: purple;
+//     color: white;
+//     grid-row: 75vh;
+//     padding: 0 10%;
+//   }
+
+//   section.repos{
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//   }
+
+//   p {
+//     font-size: 2em;
+//     word-spacing: 115%;
+//   }
+
+//   h1 {
+//     font-size: 5em;
+//   }
+
+//   h2 { font-size: 4em;}
+
+//   h3 {
+//     font-size: 3em;
+//   }
+
+//   h4 {
+//     font-size: 2.5em;
+//   }
+
+
+
+// }
+
