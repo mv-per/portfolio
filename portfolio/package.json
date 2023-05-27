@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "homepage": "https://mv-per.github.io/portfolio",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
