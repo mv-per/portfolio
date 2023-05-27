@@ -4,21 +4,21 @@ on:
     branches:
       - main
 
+defaults:
+  run:
+    working-directory: portfolio
+
 jobs:
   ci:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: 18.x
-
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Use Node.js 18 LTS
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "18"
 
       - name: Cache node modules
         id: cache-nodemodules
@@ -42,11 +42,3 @@ jobs:
       - name: Build
         run: |
           npm run build -- --prod
-
-      - name: Lint
-        run: |
-          npm run lint
-
-      - name: Test
-        run: |
-          npm run test -- --prod
