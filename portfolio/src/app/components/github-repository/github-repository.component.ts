@@ -5,9 +5,10 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { map, Observable, tap } from 'rxjs';
+import { catchError, EMPTY, map, Observable, tap } from 'rxjs';
 import { GithubService } from 'src/app/services/github.service';
 import { ChartData, ChartEvent, ChartType } from 'chart.js';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-github-repository',
@@ -41,6 +42,10 @@ export class GithubRepositoryComponent implements OnInit {
     this.gitHubService
       .getRepositoryLanguages(this.repository.name)
       .pipe(
+        catchError((err: HttpErrorResponse) => {
+          console.error(err);
+          return EMPTY;
+        }),
         tap((res) => {
           this.setupGraphData(res);
           this.changeDetector.detectChanges();
