@@ -8,6 +8,7 @@ import { GithubRepositoryComponent } from './components/github-repository/github
 import { CommonModule } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, GithubRepositoryComponent],
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    RouterModule,
     HttpClientModule,
     NgChartsModule,
   ],
