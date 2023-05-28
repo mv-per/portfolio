@@ -1,0 +1,31 @@
+<div class="header">
+  <div class="logo">MVP</div>
+
+  <div class="headerButtons">
+    <button class="textButton" routerLink="" routerLinkActive="active">
+      Welcome
+    </button>
+    <button class="textButton" routerLink="/about" routerLinkActive="active">
+      About
+    </button>
+    <button class="textButton" routerLink="/projects" routerLinkActive="active">
+      Projects
+    </button>
+    <button class="textButton" routerLink="/resume" routerLinkActive="active">
+      Resume
+    </button>
+    <!-- <button
+      class="textButton"
+      routerLink="/home/contact"
+      routerLinkActive="active"
+    >
+      Contact
+    </button> -->
+
+  </div>
+  <div class="socialIcons">
+    <a href="{{ GITHUB_WEB_URL }}"><fa-icon [icon]="githubIco"></fa-icon></a>
+    <a href="{{ LINKEDIN_WEB_URL }}"><fa-icon [icon]="linkedinIco"></fa-icon></a>
+    <a href="{{ WHATSAPP_URL }}"><fa-icon [icon]="whatsappIco"></fa-icon></a>
+  </div>
+</div>

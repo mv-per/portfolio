@@ -9,8 +9,8 @@
   border: 1px black;
   border-radius: 10px;
   border-style: solid;
-  min-height: 100px;
-  max-height: 130px;
+  min-height: 10vh;
+  max-height: 40vw;
   overflow: hidden;
 }
 
@@ -37,8 +37,8 @@
   display: -webkit-box;
   line-height: 16px;
   max-height: 32px;
-  -webkit-line-clamp: 1; /* Write the number of 
-                            lines you want to be 
+  -webkit-line-clamp: 1; /* Write the number of
+                            lines you want to be
                             displayed */
   -webkit-box-orient: vertical;
 }
@@ -51,8 +51,8 @@
   display: -webkit-box;
   line-height: 16px;
   max-height: 32px;
-  -webkit-line-clamp: 1; /* Write the number of 
-                            lines you want to be 
+  -webkit-line-clamp: 1; /* Write the number of
+                            lines you want to be
                             displayed */
   -webkit-box-orient: vertical;
 }
