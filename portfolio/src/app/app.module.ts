@@ -17,6 +17,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 // import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { HomeComponent } from './screens/home/home.component';
 import { ProjectsComponent } from './screens/projects/projects.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { ProjectsComponent } from './screens/projects/projects.component';
     PdfViewerModule,
     // NgxExtendedPdfViewerModule,
   ],
-  providers: [GithubService],
+  providers: [GithubService, { provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent],
   exports: [],
 })
