@@ -6,5 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resume.component.scss'],
 })
 export class ResumeComponent {
-  pdfSource = '/assets/docs/CV-2023-1.pdf';
+  pdfSource = 'assets/docs/CV-2023-1.pdf';
 }

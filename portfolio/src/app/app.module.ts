@@ -40,7 +40,10 @@ import { APP_BASE_HREF } from '@angular/common';
     PdfViewerModule,
     // NgxExtendedPdfViewerModule,
   ],
-  providers: [GithubService, { provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [
+    GithubService,
+    { provide: APP_BASE_HREF, useValue: '/portfolio/' },
+  ],
   bootstrap: [AppComponent],
   exports: [],
 })
