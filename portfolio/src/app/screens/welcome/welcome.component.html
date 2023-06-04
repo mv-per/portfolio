@@ -1,29 +1,25 @@
-<!-- <div class="backgroundImage"></div>
-<div class="card">
-  <div class="title">Hello, my name is <b>Marcus</b></div>
-  <div class="description">
-    I am a <i>software developer</i> based in Florianópolis, Brazil. I have a
-    serious passion on developing software that improves people's daily life.
-  </div> -->
+<section
+  class="introduction"
+  fxLayout="row"
+  fxLayoutAlign="center center"
+  fxFlex
+>
+  <div class="text" fxLayout="column" fxLayoutAlign="center center" fxFlex>
+    <h2>
+      Hello{{ userName ? " " + userName : "" }}, I'm <strong>Marcus</strong>
+    </h2>
+    <!-- <span class="sub1"> and... I describe myself as a </span> -->
+    <p>
+      Nature Lover. Researcher. Developer.
 
-  <section class="introduction">
+      <!-- I describe myself as a <strong>dynamic and experienced developer</strong> specializing in <i>robust and scalable software development</i>.
+      Committed to employing modern practices to deliver high-quality and maintanable code solutions and exceptional user experiences.</p> -->
+    </p>
+  </div>
 
-    <div class="top">
-      <div class="text">
-        <h2>Hello!</h2>
-        <h3>Welcome to my portfolio!</h3>
-        <p>
-          My name is <strong>Marcus</strong>,
-          and I am thrilled to share with you my journey of blending my expertise in engineering with my newfound love for programming.
-        </p>
-      </div>
-
-        <img src="assets/images/profile.jpeg" alt="Profile picture" class="profile-pic">
-    </div>
-
-    <div class="enter-button"><a routerLink="/about" routerLinkActive="active">Click here to learn more about me...</a></div>
-
-  </section>
-
-
-<!-- </div> -->
+  <img
+    src="assets/images/profile.jpeg"
+    alt="Profile picture"
+    class="profile-pic"
+  />
+</section>

@@ -1,17 +1,19 @@
 .repositoryCard {
-  background-color: white;
+  // width: 100%;
   color: black;
-  display: flex;
-  flex-direction: row;
-  margin: 0 0 1em 0;
-  align-items: center;
-  justify-content: center;
+  background-color: white;
+  //   color: black;
+  //   display: flex;
+  //   flex-direction: row;
+  //   margin: 0 0 1em 0;
+  //   align-items: center;
+  //   justify-content: center;
   border: 1px black;
   border-radius: 10px;
-  border-style: solid;
-  min-height: 10vh;
-  max-height: 40vw;
-  overflow: hidden;
+  //   border-style: solid;
+  //   min-height: 10vh;
+  //   max-height: 40vw;
+  //   overflow: hidden;
 }
 
 .languageGraph {
@@ -19,12 +21,13 @@
 }
 
 .info {
-  margin-left: 10px;
-  height: 100%;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  padding-left: 10px;
+  // margin-left: ;
+  //   height: 100%;
+  //   padding: 10px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   width: 100%;
   background-color: rgba(53, 141, 156, 0.26);
 }
 

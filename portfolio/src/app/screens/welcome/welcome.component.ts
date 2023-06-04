@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
 import { map, tap } from 'rxjs/operators';
 import { GithubService } from 'src/app/services/github.service';
 
@@ -8,4 +8,6 @@ import { GithubService } from 'src/app/services/github.service';
   styleUrls: ['./welcome.component.scss'],
   providers: [GithubService],
 })
-export class WelcomeComponent {}
+export class WelcomeComponent {
+  userName = '';
+}

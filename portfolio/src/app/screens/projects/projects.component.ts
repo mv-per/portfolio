@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { map, tap } from 'rxjs';
+import { EMPTY, catchError, map, tap } from 'rxjs';
 import { GithubService } from 'src/app/services/github.service';
 
 const UNWANTED_REPOSITORIES = ['mv-per', 'portfolio', 'JS-scripts'];
@@ -16,6 +16,8 @@ interface IRepository {
 export class ProjectsComponent {
   repositories: any;
   height: number = 0;
+  errorMessage: string = '';
+
   constructor(
     private gitHubService: GithubService,
     private changeDetector: ChangeDetectorRef
@@ -25,8 +27,12 @@ export class ProjectsComponent {
     this.gitHubService
       .getRepositories()
       .pipe(
+        catchError((err) => {
+          this.errorMessage = 'Error Fetching Repositories';
+          console.error(err);
+          return EMPTY;
+        }),
         map((repositories) => {
-          // console.log(repository);
           return repositories.filter(
             (repository: IRepository) =>
               UNWANTED_REPOSITORIES.indexOf(repository['name']) === -1
@@ -34,7 +40,6 @@ export class ProjectsComponent {
         }),
 
         tap((data) => {
-          console.log(data);
           this.repositories = data.sort(
             (x: any, y: any) =>
               +new Date(y.updated_at) - +new Date(x.updated_at)

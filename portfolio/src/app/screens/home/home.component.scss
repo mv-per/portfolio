@@ -1,130 +1,82 @@
+section {
+  width: 900px;
 
-$pale-pink:#63399b;
-$light-gray: #2e2e2e;
-
-.grid {
-  color: #fff;
-  h4 {
-    font-size: 2.5em;
-  }
-
-  h2 {
-    font-size: 4em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  h1 {
+    text-transform: capitalize;
   }
 
   p {
-    font-size: 2em;
+    line-height: calc(1ex / 0.32);
   }
 
   a {
-    color: #fff;
+    color: orange;
+    text-decoration: none;
   }
 
-  // Styles for the Background section
-  .background {
-    background-color: $pale-pink;
-    padding: 0 5%;
-    display: flex;
-    flex-direction: row;
-    min-height: 75vh;
-
-    .text {
-      margin-bottom: 20px;
-       padding: 0 10% 0 5%;
-
-
-    }
-
-    img {
-      align-self: center;
-      // width: 200px;
-      max-height: 70vh;
-      border-radius: 10%;
-      object-fit: cover;
-      object-position: center;
-      // margin-bottom: 20px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
-    }
-  }
-
-  // Styles for the Passion section
-  .passion {
-    background-color: $light-gray;
-    color: #fff;
-    padding: 40px;
-    min-height: 75vh;
-
-    .text{
-      padding: 0 10%;
-    }
-  }
-
-  // Styles for the Projects section
-  .projects {
-    background-color: $pale-pink;
-    color: #fff;
-    padding: 40px;
-    min-height: 75vh;
-
-    .text{
-      padding: 0 10%;
-   }
-
-  }
-
-  // Styles for the Learning section
-  .learning {
-    background-color: $light-gray;
-    color: #fff;
-    padding: 40px;
-    min-height: 75vh;
-
-    .text{
-      padding: 0 10%;
-    }
-  }
-
-
-  // Styles for the Closing section
-  .closing {
-    background-color: black;
-    color: #fff;
-    padding: 40px;
-    min-height: 100vh;
-    align-items: center;
-    display: flex;
+  .lab-pic {
+    align-self: center;
     justify-content: center;
-
-    .text{
-      padding: 0 10%;
-      line-height: 4em;
-    }
-
-    .back-to-top {
-      display: none; /* Hidden by default */
-      position: fixed; /* Fixed/sticky position */
-      bottom: 20px; /* Place the button at the bottom of the page */
-      right: 30px; /* Place the button 30px from the right */
-      z-index: 99; /* Make sure it does not overlap */
-      border: none; /* Remove borders */
-      outline: none; /* Remove outline */
-      background-color: white; /* Set a background color */
-      color: black; /* Text color */
-      cursor: pointer; /* Add a mouse pointer on hover */
-      padding: 15px; /* Some padding */
-      border-radius: 50%; /* Rounded corners */
-      font-size: 1em; /* Increase font size */
-    }
-
-    .back-to-top:hover {
-      background-color: red; /* Add a dark-grey background on hover */
-      box-shadow: 0px 1px 6px white;
-    }
+    border-radius: 10%;
+    object-fit: cover;
+    box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.5);
+    height: 500px;
   }
 
+  .back-to-top {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: white; /* Set a background color */
+    color: black; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Rounded corners */
+    font-size: 1em; /* Increase font size */
+  }
 
+  .back-to-top:hover {
+    box-shadow: 0px 1px 6px white;
+  }
+}
+
+@supports (font-size-adjust: 1) {
+  section {
+    font-size-adjust: 0.7;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  section {
+    width: 95vw;
+
+    .content {
+      flex-wrap: wrap-reverse;
+      display: flex;
+    }
+
+    .lab-pic {
+      height: 400px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  section {
+    width: 95vw;
+
+    .content {
+      flex-wrap: wrap-reverse;
+      display: flex;
+    }
+
+    .lab-pic {
+      height: 500px;
+    }
+  }
 }

@@ -1,0 +1,28 @@
+.repo-cards {
+  margin-top: 10px;
+  app-github-repository {
+    height: 150px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  app-github-repository {
+    width: 100vw;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  app-github-repository {
+    width: 80vw;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  app-github-repository {
+    max-width: 60vw;
+    width: calc(0.8 * 768px);
+  }
+}

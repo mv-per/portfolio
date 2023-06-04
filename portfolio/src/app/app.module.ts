@@ -14,10 +14,13 @@ import { ResumeComponent } from './screens/resume/resume.component';
 import { WelcomeComponent } from './screens/welcome/welcome.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-// import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { HomeComponent } from './screens/home/home.component';
 import { ProjectsComponent } from './screens/projects/projects.component';
 import { APP_BASE_HREF } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ContactComponent } from './screens/contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,8 @@ import { APP_BASE_HREF } from '@angular/common';
     HeaderComponent,
     HomeComponent,
     ProjectsComponent,
+    ContactComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,12 +43,11 @@ import { APP_BASE_HREF } from '@angular/common';
     NgChartsModule,
     FontAwesomeModule,
     PdfViewerModule,
-    // NgxExtendedPdfViewerModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [
-    GithubService,
-    { provide: APP_BASE_HREF, useValue: '/portfolio/' },
-  ],
+  providers: [GithubService, { provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent],
   exports: [],
 })

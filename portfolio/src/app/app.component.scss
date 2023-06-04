@@ -1,0 +1,19 @@
+.router-flex + * {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.header-fixed {
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(15px);
+  box-shadow: 1px 1px 5px black;
+  top: 0px;
+}
+
+.header-free {
+  position: static;
+  top: -50px;
+}

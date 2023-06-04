@@ -1,0 +1,44 @@
+section {
+  width: 900px;
+
+  p {
+    line-height: calc(1ex / 0.32);
+  }
+
+  .contact-form {
+    width: 80%;
+  }
+}
+
+@supports (font-size-adjust: 1) {
+  section {
+    font-size-adjust: 0.8;
+  }
+}
+
+.social-icons fa-icon {
+  font-size: 3.2rem;
+  color: orange;
+}
+
+.social-icons fa-icon:hover {
+  // color: orange;
+  text-shadow: 0px 1px 6px white;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  section {
+    width: 95vw;
+
+    .contact-form {
+      width: 100vw;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  section {
+    width: 95vw;
+  }
+}

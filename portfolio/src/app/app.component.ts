@@ -1,11 +1,20 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { GithubService } from './services/github.service';
-import { map, tap } from 'rxjs/operators';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent {}
+export class AppComponent {
+  headerFixed = false;
+
+  @HostListener('window:scroll', ['$event'])
+  protected onScroll() {
+    if (window.scrollY > 30) {
+      this.headerFixed = true;
+    } else {
+      this.headerFixed = false;
+    }
+  }
+}

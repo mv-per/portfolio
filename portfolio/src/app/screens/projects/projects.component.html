@@ -1,5 +1,12 @@
-<section class="repos">
-  <div class="repositories" *ngFor="let repo of repositories">
-    <app-github-repository [repository]="repo"></app-github-repository>
-  </div>
-</section>
+<div
+  fxLayout="column"
+  fxLayoutAlign="flex-start center"
+  fxLayoutGap="10"
+  fxFill
+  class="repo-cards"
+>
+  <app-github-repository
+    *ngFor="let repo of repositories"
+    [repository]="repo"
+  ></app-github-repository>
+</div>

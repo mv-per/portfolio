@@ -1,0 +1,40 @@
+<section class="contact" fxFlex fxLayout="column" fxLayoutAlign="center center">
+  <div
+    class="text-section"
+    fxFlex
+    fxLayout="column"
+    fxLayoutAlign="center center"
+  >
+    <h1>Let's Connect!</h1>
+
+    <p>
+      I'm thrilled to connect with you and explore how we can collaborate.
+      Whether you have a question, project idea, or professional opportunity,
+      <strong>I'd love</strong> to hear from you.
+    </p>
+
+    <p>
+      Feel free to directly reach out using any of the
+      <i>social media and email</i> or fill the form below. I'll make sure to
+      get back to you as soon as possible.
+    </p>
+
+    <h2>Looking forward to hearing from you!</h2>
+
+    <div class="social-icons" fxFlex fxLayout="row" fxLayoutGap="25">
+      <a href="{{ GITHUB_WEB_URL }}"><fa-icon [icon]="githubIco"></fa-icon></a>
+      <a href="{{ LINKEDIN_WEB_URL }}"
+        ><fa-icon [icon]="linkedinIco"></fa-icon
+      ></a>
+      <a href="{{ WHATSAPP_URL }}"><fa-icon [icon]="whatsappIco"></fa-icon></a>
+      <a href="mailto:mav.pereira@outlook.com"
+        ><fa-icon [icon]="emailIco"></fa-icon
+      ></a>
+    </div>
+  </div>
+
+  <div class="contact-form" fxFlex fxLayout="column" fxLayoutGap="0">
+    <h3>Or you can send me a message right now...</h3>
+    <app-contact-form fxFlex fxLayoutAlign="center center"></app-contact-form>
+  </div>
+</section>

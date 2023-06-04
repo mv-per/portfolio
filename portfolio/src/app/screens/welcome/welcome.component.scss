@@ -1,75 +1,60 @@
 .introduction {
-  background-color: #2c3e50;
-  color: #fff;
+  padding: 0 10%;
 
-  min-height: calc(100vh - 4.5em);
-  width: 100%;
-
-  .top{
-
-    padding: 0 10% 0 10%;
-    display: flex;
-    flex-direction: row;
-    .text {
-      margin-bottom: 20px;
-
-      h1 {
-        font-size: 5em;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      h2 {
-        font-size: 4em;
-        margin-bottom: 20px;
-      }
-
-      h3 {
-        font-size: 3em;
-      }
-
-      h4 {
-        font-size: 2.5em;
-      }
-
-      p {
-        font-size: 2em;
-      }
-    }
-
-    .profile-pic {
-      align-self: center;
-      justify-content: start;
-      height: 40vh;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-top: 20px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-  }
-
-  .enter-button {
-    display: flex;
+  .profile-pic {
+    align-self: center;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-
-    a {
-      font-size: 2em;
-      background-color: none;
-      color:white;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: dashed;
-      text-shadow: 0px 1px 6px white;
-      font-style: italic;
-    }
+    border-radius: 10%;
+    object-fit: cover;
+    margin-left: 20px;
+    box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.5);
   }
 }
 
+@supports (font-size-adjust: 1) {
+  section {
+    font-size-adjust: 0.8;
+  }
+}
 
+p {
+  line-height: calc(1ex / 0.32);
+}
+
+section {
+  h3 {
+    font-size: 1.75em;
+    line-height: calc(1ex / 0.38);
+    margin: calc(1ex / 0.38) 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  section {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+  .profile-pic {
+    margin: 1rem;
+    height: 20vh;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  section {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+  .profile-pic {
+    height: 30vh;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .profile-pic {
+    height: 40vh;
+  }
+}
