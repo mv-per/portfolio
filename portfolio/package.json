@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://mv-per.github.io/portfolio",
   "scripts": {
     "ng": "ng",
@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "build-prod": "ng build --configuration production --base-href 'https://mv-per.github.io/portfolio/' --deploy-url 'https://mv-per.github.io/portfolio/'",
     "test": "ng test",
-    "dev": "lite-server --baseDir='../docs/portfolio/'",
+    "dev": "lite-server --baseDir='../docs/'",
     "lint": "ng lint"
   },
   "private": true,
