@@ -47,7 +47,10 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [GithubService, { provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [
+    GithubService,
+    { provide: APP_BASE_HREF, useValue: '/portfolio' },
+  ],
   bootstrap: [AppComponent],
   exports: [],
 })
