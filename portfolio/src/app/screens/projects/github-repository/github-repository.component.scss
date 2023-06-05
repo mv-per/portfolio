@@ -1,0 +1,56 @@
+.repositoryCard {
+  color: black;
+  background-color: white;
+  border: 1px black;
+  border-radius: 10px;
+}
+
+.languageGraph {
+  padding: 5px;
+}
+
+.info {
+  padding-left: 10px;
+  background-color: rgba(53, 141, 156, 0.26);
+}
+
+.title {
+  margin-top: -5px;
+  font-size: large;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px;
+  max-height: 32px;
+  -webkit-line-clamp: 1; /* Write the number of
+                            lines you want to be
+                            displayed */
+  -webkit-box-orient: vertical;
+}
+
+.description {
+  font-size: small;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px;
+  max-height: 32px;
+  -webkit-line-clamp: 1; /* Write the number of
+                            lines you want to be
+                            displayed */
+  -webkit-box-orient: vertical;
+}
+
+.updated {
+  font-size: smaller;
+}
+
+.buttonStyle {
+  font-size: small;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

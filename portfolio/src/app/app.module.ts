@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GithubService } from './services/github.service';
-import { GithubRepositoryComponent } from './components/github-repository/github-repository.component';
+import { GithubRepositoryComponent } from './screens/projects/github-repository/github-repository.component';
 import { CommonModule } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +19,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContactComponent } from './screens/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ContactFormComponent } from './screens/contact/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -47,10 +46,7 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [
-    GithubService,
-    { provide: APP_BASE_HREF, useValue: '/portfolio' },
-  ],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/portfolio' }],
   bootstrap: [AppComponent],
   exports: [],
 })

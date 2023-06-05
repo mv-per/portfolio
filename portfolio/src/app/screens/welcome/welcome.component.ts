@@ -1,12 +1,9 @@
-import { ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
-import { map, tap } from 'rxjs/operators';
-import { GithubService } from 'src/app/services/github.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss'],
-  providers: [GithubService],
 })
 export class WelcomeComponent {
   userName = '';

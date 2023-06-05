@@ -1,14 +1,9 @@
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
-  ElementRef,
   HostListener,
-  OnDestroy,
-  OnInit,
 } from '@angular/core';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { Subscription, fromEvent, map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-home',

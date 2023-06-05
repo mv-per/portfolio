@@ -12,6 +12,7 @@ interface IRepository {
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
+  providers: [GithubService],
 })
 export class ProjectsComponent {
   repositories: any;

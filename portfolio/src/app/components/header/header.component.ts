@@ -4,14 +4,6 @@ import {
   ChangeDetectionStrategy,
   HostListener,
 } from '@angular/core';
-import {
-  faGithub,
-  faGithubSquare,
-  faLinkedin,
-  faLinkedinIn,
-  faWhatsapp,
-  faWhatsappSquare,
-} from '@fortawesome/free-brands-svg-icons';
 import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -20,11 +12,11 @@ import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   barsIco = faBars;
   closeIco = faClose;
   _screenWidth!: number;
-  showDropdown: boolean = false;
+  showDropdown = false;
   shortLogoText = 'Marcus Pereira';
 
   headerLinks = [
@@ -42,9 +34,7 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  constructor() {}
-
-  ngOnInit(): void {
+  constructor() {
     this.screenWidth = window.innerWidth;
   }
 
