@@ -5,10 +5,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: url("assets/images/background.webp");
+  font-family: 'Open Sans', sans-serif;
   background-size: cover;
   background-attachment: fixed;
-  color: #fff;
+  color: #ffffff;
+  font-weight: 300;
   height: 100vh;
 }
+
+body {
+  background-image: url("assets/images/background.webp");
+}
+

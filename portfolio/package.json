@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "build-prod": "ng build --configuration production" ,
+    "build-prod": "ng build --base-href='/portfolio/' --deploy-url='/portfolio/'" ,
     "test": "ng test",
     "dev": "lite-server --baseDir='../docs'",
     "lint": "ng lint"

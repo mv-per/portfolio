@@ -1,9 +1,8 @@
 .contact-form {
   color: white;
-
   border: 1px orange;
-
-  padding: 10px;
+  margin: 10px;
+  width: 100%;
 }
 
 .form-input {
@@ -13,13 +12,15 @@
 .form-input textarea,
 input {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  // box-sizing: border-box;
-  font-size: 1.2rem;
   border: 2px solid orange;
   border-radius: 4px;
 }
+
+.form-input textarea {
+  min-height: 20vh;
+}
+
+
 
 .form-input textarea:focus,
 input:focus {
@@ -28,11 +29,8 @@ input:focus {
 }
 
 .form-input label {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
-  display: flex;
-  justify-content: end;
-  padding-right: 10px;
 }
 
 @supports (font-size-adjust: 1) {
@@ -42,22 +40,35 @@ input:focus {
 }
 
 .submit-button {
-  // position: relative;
-  padding: 16px 0;
-  font-size: 1.5rem;
-  color: white;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  font-weight: 400;
+  color: black;
+  background-color: orange;
   border-radius: 4px;
   text-shadow: 0 0 15px var(--color);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  transition: 0.5s;
-  z-index: 1;
+  border: 2px solid rgba(0, 0, 0, 0);
+
 }
 
 .submit-button:hover {
-  color: orange;
-  border: 2px solid rgba(0, 0, 0, 0);
-  box-shadow: 0 0 0px var(--color);
+  box-shadow: 0 0 4px black;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+  .contact-form {
+    width: 95vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-form {
+    width: 95vw;
+
+  }
 }

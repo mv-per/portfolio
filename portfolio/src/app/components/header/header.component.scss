@@ -12,7 +12,7 @@ header {
   border: 0;
   background-color: inherit;
   color: inherit;
-  font-size: 2.3rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -21,45 +21,20 @@ header {
   transition: 0.5s ease-in-out;
 }
 
-.longer-name {
-  display: none;
-}
-
-.logo {
-  font-size: 3rem;
-  font-weight: 800;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-
-  a {
-    color: orange;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-shadow: 1px 1px 15px rgba(36, 22, 61, 0.9);
-
-    .longer-name {
-      display: block;
-    }
-
-    .short-name {
-      display: none;
-      transition: all 0.5s ease-in-out;
-    }
-  }
-}
 
 .dropdown-menu {
   position: absolute;
   right: 10px;
-  top: 70px;
+  top: 80px;
   width: 300px;
-  background-color: rgba(36, 22, 61, 0.1);
-  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 10px;
   overflow: hidden;
-  z-index: 99;
+  z-index: 4;
   display: none;
+  // color: orange;
 }
 
 .dropdown-menu button {
@@ -71,49 +46,25 @@ header {
   overflow: hidden;
   height: 3rem;
   color: orange;
+  text-transform: uppercase;
+  font-weight: 500;
+
 
   p {
     align-items: center;
     padding: 20px 0px;
+
   }
 }
 
 .dropdown-menu button:hover {
   background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  font-style: oblique;
+  letter-spacing: 1rem;
 }
 
-.social {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.social a:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.social a {
-  width: 100%;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.social fa-icon {
-  padding: 10px 0px;
-  font-size: 4rem;
-  color: orange;
-}
-
-.social fa-icon:hover {
-  color: orange;
-
-  transition: 0.1s linear;
-  // font-size: 4rem;
-}
 
 .toggle-button fa-icon {
-  font-size: 2em;
+  font-size: 1.2em;
   display: none;
 }
 

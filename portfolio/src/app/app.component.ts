@@ -11,7 +11,7 @@ export class AppComponent {
 
   @HostListener('window:scroll', ['$event'])
   protected onScroll() {
-    if (window.scrollY > 30) {
+    if (window.scrollY > 80) {
       this.headerFixed = true;
     } else {
       this.headerFixed = false;

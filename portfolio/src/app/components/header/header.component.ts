@@ -15,7 +15,7 @@ import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent {
   barsIco = faBars;
   closeIco = faClose;
-  _screenWidth!: number;
+  screenWidth!: number;
   showDropdown = false;
   shortLogoText = 'Marcus Pereira';
 
@@ -25,14 +25,6 @@ export class HeaderComponent {
     { route: '/resume', name: 'Resume' } as IHeaderLink,
     { route: '/contact', name: 'Contact' } as IHeaderLink,
   ];
-
-  set screenWidth(value: number) {
-    if (value < 1024) {
-      this.shortLogoText = 'MVP';
-    } else {
-      this.shortLogoText = 'Marcus Pereira';
-    }
-  }
 
   constructor() {
     this.screenWidth = window.innerWidth;
