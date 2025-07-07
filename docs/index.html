@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<html style="scroll-behavior: smooth;" dir="ltr" lang="en-US" suppresshydrationwarning="true" data-lt-installed="true"><head>
+<html lang="en">
+
+<head>
     <title>Marcus - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/_nicegui/2.19.0.dev0/static/favicon.ico" rel="shortcut icon">
     <link href="/_nicegui/2.19.0.dev0/static/nicegui.css" rel="stylesheet" type="text/css">
     <link href="/_nicegui/2.19.0.dev0/static/fonts.css" rel="stylesheet" type="text/css">
-    
     <link href="/_nicegui/2.19.0.dev0/static/quasar.prod.css" rel="stylesheet" type="text/css">
-    
-    <!-- prevent Prettier from removing this line -->
-    
     <style>
-        /* Import Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
         /* CSS Variables for consistent theming */
         :root {
             --primary-color: #6366f1;
@@ -37,768 +32,241 @@
             --border-radius-lg: 16px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        * {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-        
-        .portfolio-container {
+    </style>
+</head>
+
+<body class="desktop no-touch body--light" style="--q-primary: #5898d4;">
+
+
+
+
+
+    <!-- prevent Prettier from removing this line -->
+
+
+
+
+
+
+
+    <style>
+        *[data-joystick]>div {
             width: 100%;
-            margin: 0;
-            padding: 0;
-            background: var(--bg-secondary);
-        }
-        
-        .content-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .section {
-            margin-bottom: 80px;
-            padding: 60px 0;
-            transition: var(--transition);
-        }
-        
-        .welcome-section {
-            background: var(--gradient-primary);
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
-            margin-bottom: 0;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .welcome-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><path d="M0,50 Q250,0 500,50 T1000,50 L1000,100 L0,100 Z"/></svg>') repeat-x;
-            background-size: 1000px 100px;
-            background-position: bottom;
-            animation: wave 20s linear infinite;
-        }
-        
-        @keyframes wave {
-            0% { background-position-x: 0; }
-            100% { background-position-x: 1000px; }
-        }
-        
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.9);
-            box-shadow: var(--shadow-xl);
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .profile-pic:hover {
-            transform: scale(1.05);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        .about-section {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            border-radius: var(--border-radius-lg);
-            padding: 50px;
-            box-shadow: var(--shadow-lg);
-            margin: 40px 0;
-            font-size: 1.2em;
-            line-height: 1.8;
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-        }
-        
-        .about-section:hover {
-            box-shadow: var(--shadow-xl);
-            transform: translateY(-2px);
-        }
-        
-        .about-section p {
-            margin-bottom: 28px;
-            text-align: justify;
-            color: var(--text-secondary);
-        }
-        
-        .about-section .highlight {
-            background: var(--gradient-primary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 600;
-            font-size: 1.1em;
-        }
-        
-        .about-section .emphasis {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        .projects-section {
-            background: var(--bg-primary);
-            border-radius: var(--border-radius-lg);
-            padding: 50px;
-            margin: 40px 0;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-        
-        .projects-section:hover {
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .resume-section {
-            background: var(--bg-primary);
-            border-radius: var(--border-radius-lg);
-            padding: 50px;
-            box-shadow: var(--shadow-lg);
-            text-align: left;
-            margin: 40px 0;
-            font-size: 1.1em;
-            line-height: 1.7;
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-        
-        .resume-section:hover {
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .resume-section h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--text-primary);
-        }
-        
-        .resume-section h3 {
-            color: var(--primary-color);
-            font-size: 1.6em;
-            font-weight: 600;
-            margin-top: 40px;
-            margin-bottom: 25px;
-            padding-bottom: 12px;
-            border-bottom: 3px solid var(--primary-color);
+            height: 100%;
             position: relative;
         }
-        
-        .resume-section h3::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-        
-        .resume-section .contact-info {
-            background: var(--gradient-primary);
-            color: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin-bottom: 40px;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-        }
-        
-        .resume-section .contact-info:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .resume-section .contact-info strong {
-            font-size: 1.4em;
-            color: white;
-            font-weight: 600;
-        }
-        
-        .resume-section .contact-info a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .resume-section .contact-info a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        .resume-section .job-title {
-            color: var(--primary-color);
-            font-weight: 600;
-            font-size: 1.2em;
-        }
-        
-        .resume-section .company-name {
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: 1.1em;
-        }
-        
-        .resume-section .date-range {
-            color: var(--text-light);
-            font-style: italic;
-            margin-left: 12px;
-            font-weight: 500;
-        }
-        
-        .resume-section .degree {
-            color: var(--secondary-color);
-            font-weight: 600;
-            font-size: 1.1em;
-        }
-        
-        .resume-section .institution {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-        
-        .resume-section ul {
-            margin: 20px 0;
-            padding-left: 24px;
-        }
-        
-        .resume-section li {
-            margin-bottom: 12px;
-            position: relative;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        
-        .resume-section li::marker {
-            color: var(--primary-color);
-        }
-        
-        .resume-section .highlight-achievement {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-            color: var(--primary-color);
-            padding: 3px 8px;
-            border-radius: 6px;
-            font-weight: 600;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-        
-        .resume-section .publication-item {
-            background: var(--bg-accent);
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        .resume-section .publication-item:hover {
-            transform: translateX(5px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .resume-section .publication-journal {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        .resume-section .publication-year {
-            color: var(--text-light);
-            font-weight: 600;
-        }
-        
-        .section-title {
-            font-size: 2.8em;
-            font-weight: 700;
-            margin-bottom: 40px;
-            color: var(--text-primary);
-            text-align: center;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-        
-        .welcome-title {
-            font-size: 3.5em;
-            font-weight: 700;
-            margin-bottom: 25px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .welcome-subtitle {
-            font-size: 1.6em;
-            opacity: 0.95;
-            margin-bottom: 40px;
-            font-weight: 400;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .project-card {
-            background: var(--bg-primary);
-            padding: 40px;
-            margin: 20px 0;
-            border-radius: var(--border-radius-lg);
-            transition: var(--transition);
-            font-size: 1.1em;
+
+        .js-plotly-plot .plotly .modebar-group {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
         }
-        
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .project-card h3 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-        
-        .project-card p {
-            font-size: 1.1em;
-            line-height: 1.7;
-            margin-bottom: 16px;
-            color: var(--text-secondary);
-        }
-        
-        .project-header {
+
+        .js-plotly-plot .plotly .modebar-btn {
             display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 25px;
         }
-        
-        .project-content {
-            flex: 1;
+
+        .js-plotly-plot .plotly .modebar-btn svg {
+            position: static;
         }
-        
-        .project-footer {
-            margin-top: auto;
-            padding-top: 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .details-btn, .github-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 24px;
-            border-radius: var(--border-radius);
-            font-size: 0.95em;
-            font-weight: 500;
-            text-decoration: none;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .details-btn {
-            background: var(--gradient-primary);
-            color: white;
-        }
-        
-        .details-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .github-btn {
-            background: var(--text-primary);
-            color: white;
-        }
-        
-        .github-btn:hover {
-            background: var(--text-secondary);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .modal-text-content {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-        
-        .modal-text-content h4 {
-            color: var(--primary-color);
-            font-size: 1.6em;
-            margin-bottom: 25px;
-            text-align: center;
-            font-weight: 600;
-        }
-        
-        .modal-text-content .story-section {
-            margin-bottom: 25px;
-        }
-        
-        .modal-text-content .story-section h5 {
-            color: var(--secondary-color);
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .modal-text-content ul {
-            margin-left: 24px;
-            margin-bottom: 20px;
-        }
-        
-        .modal-text-content li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        
-        .modal-text-content .tech-stack {
-            background: var(--bg-accent);
-            padding: 20px;
-            border-radius: var(--border-radius);
-            margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-        }
-        
-        .modal-text-content .tech-stack strong {
-            color: var(--primary-color);
-        }
-        
-        .modal-text-content p {
-            line-height: 1.7;
-            margin-bottom: 18px;
-        }
-        
-        /* Navigation Styles */
-        .nav-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-        
-        .nav-container button {
-            color: var(--text-secondary);
-            font-weight: 500;
-            padding: 8px 16px;
-            margin: 0 4px;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            background: transparent;
-            border: none;
-        }
-        
-        .nav-container button:hover {
-            background: var(--primary-color);
-            color: #fff;
-            transform: translateY(-1px);
-        }
-        
-        /* Back to top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 56px;
-            height: 56px;
-            font-size: 1.5em;
-            cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            transition: var(--transition);
-        }
-        
-        .back-to-top:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .content-wrapper {
-                padding: 0 16px;
-            }
-            
-            .welcome-title {
-                font-size: 2.5em;
-            }
-            
-            .section-title {
-                font-size: 2.2em;
-            }
-            
-            .about-section, .projects-section, .resume-section {
-                padding: 30px;
-            }
-            
-            .project-card {
-                padding: 30px;
-            }
-        }
-        
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
+
+        .js-plotly-plot {
+            box-sizing: content-box;
         }
     </style>
-    
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>document.documentElement.style.scrollBehavior = "smooth";</script>
 
-    <script type="importmap">
-      {"imports": {"ag-grid-community":"/_nicegui/2.19.0.dev0/libraries/98e2f8ec00e11fc52295035fcb3115dc/ag-grid-community.min.js","echarts":"/_nicegui/2.19.0.dev0/libraries/09e724e59c05c5f797ea9f4cc12634d4/echarts.min.js","echarts-gl":"/_nicegui/2.19.0.dev0/libraries/ba645be3e9c41baf4eceb3166a749d45/echarts-gl.min.js","nipplejs":"/_nicegui/2.19.0.dev0/libraries/47a8c11013b20f6c0a0f6d291e99a8a0/nipplejs.js","standalone":"/_nicegui/2.19.0.dev0/libraries/39a9ead0d95e2abbc81a696eae95de83/standalone.js","mermaid":"/_nicegui/2.19.0.dev0/libraries/6e1ebdc871ed54d1125a562e6dd2faa9/mermaid.esm.min.mjs","blockDiagram-NDWNTGEE":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/blockDiagram-NDWNTGEE.mjs","c4Diagram-AUYESYAG":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/c4Diagram-AUYESYAG.mjs","chunk-2RSIMOBZ":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-2RSIMOBZ.mjs","chunk-4BPNZXC3":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-4BPNZXC3.mjs","chunk-4KE642ED":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-4KE642ED.mjs","chunk-4SRTBRON":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-4SRTBRON.mjs","chunk-6BY5RJGC":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-6BY5RJGC.mjs","chunk-6IZS222M":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-6IZS222M.mjs","chunk-6XGRHI2A":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-6XGRHI2A.mjs","chunk-AC3VT7B7":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-AC3VT7B7.mjs","chunk-BKDDFIKN":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-BKDDFIKN.mjs","chunk-BOP2KBYH":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-BOP2KBYH.mjs","chunk-C7NU23FD":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-C7NU23FD.mjs","chunk-CBSWTUHP":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-CBSWTUHP.mjs","chunk-D3PZO57J":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-D3PZO57J.mjs","chunk-DZFIHE2J":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-DZFIHE2J.mjs","chunk-E4AWDUZE":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-E4AWDUZE.mjs","chunk-F4773GRL":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-F4773GRL.mjs","chunk-GTKDMUJJ":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-GTKDMUJJ.mjs","chunk-KMOJB3TB":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-KMOJB3TB.mjs","chunk-NQURTBEV":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-NQURTBEV.mjs","chunk-OUDNNCD4":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-OUDNNCD4.mjs","chunk-RRFB4HDS":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-RRFB4HDS.mjs","chunk-TI4EEUUG":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-TI4EEUUG.mjs","chunk-U6LOUQAF":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-U6LOUQAF.mjs","chunk-UWHJNN4Q":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-UWHJNN4Q.mjs","chunk-VRGDDFRA":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-VRGDDFRA.mjs","chunk-VSLJSFIP":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-VSLJSFIP.mjs","chunk-WVHPJQMP":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-WVHPJQMP.mjs","chunk-YFFLADYN":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-YFFLADYN.mjs","chunk-YJEQJWB7":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-YJEQJWB7.mjs","chunk-YPUTD6PB":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/chunk-YPUTD6PB.mjs","classDiagram-EPVPYR3L":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/classDiagram-EPVPYR3L.mjs","classDiagram-v2-NO4EPWGV":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/classDiagram-v2-NO4EPWGV.mjs","dagre-EVPMPUST":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/dagre-EVPMPUST.mjs","diagram-V25JEYTC":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/diagram-V25JEYTC.mjs","erDiagram-Y4N7DENO":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/erDiagram-Y4N7DENO.mjs","flowDiagram-JTTVBJUY":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/flowDiagram-JTTVBJUY.mjs","ganttDiagram-6SR64PWN":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/ganttDiagram-6SR64PWN.mjs","gitGraph-F2EDSAW4-LKDW3VZQ":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/gitGraph-F2EDSAW4-LKDW3VZQ.mjs","gitGraphDiagram-LRIBUTDQ":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/gitGraphDiagram-LRIBUTDQ.mjs","info-PWGDJKR5-T7ZKA3RY":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/info-PWGDJKR5-T7ZKA3RY.mjs","infoDiagram-YTPSHCSX":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/infoDiagram-YTPSHCSX.mjs","journeyDiagram-VRXW2F6L":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/journeyDiagram-VRXW2F6L.mjs","katex-SWYD7GD6":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/katex-SWYD7GD6.mjs","mindmap-definition-KLCIANCF":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/mindmap-definition-KLCIANCF.mjs","packet-7PPW3X5M-O6SZ3T2R":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/packet-7PPW3X5M-O6SZ3T2R.mjs","pie-RF5LNP4B-V656W2AT":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/pie-RF5LNP4B-V656W2AT.mjs","pieDiagram-WYSUK7CQ":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/pieDiagram-WYSUK7CQ.mjs","quadrantDiagram-K5BY4R5E":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/quadrantDiagram-K5BY4R5E.mjs","requirementDiagram-2DBX4ZW4":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/requirementDiagram-2DBX4ZW4.mjs","sankeyDiagram-F3GI3WFI":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/sankeyDiagram-F3GI3WFI.mjs","sequenceDiagram-QBGN4KDC":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/sequenceDiagram-QBGN4KDC.mjs","stateDiagram-S3XGF733":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/stateDiagram-S3XGF733.mjs","stateDiagram-v2-BSO5MUCZ":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/stateDiagram-v2-BSO5MUCZ.mjs","timeline-definition-MHTE3MCH":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/timeline-definition-MHTE3MCH.mjs","xychartDiagram-RLS75X5Z":"/_nicegui/2.19.0.dev0/libraries/487d8f86f69fb6e313dd5a718044cdf0/xychartDiagram-RLS75X5Z.mjs","plotly":"/_nicegui/2.19.0.dev0/libraries/f1047bfb888a075b52bbf96d8582a362/plotly.min.js","three":"/_nicegui/2.19.0.dev0/libraries/b25a3440bc553a1ae77828cf60255c23/three.module.js","BufferGeometryUtils":"/_nicegui/2.19.0.dev0/libraries/01b4f927ac06f3e6bfddd486a87ca7c9/BufferGeometryUtils.js","CSS2DRenderer":"/_nicegui/2.19.0.dev0/libraries/01b4f927ac06f3e6bfddd486a87ca7c9/CSS2DRenderer.js","CSS3DRenderer":"/_nicegui/2.19.0.dev0/libraries/defb651a91e9363768293c5580a3a700/CSS3DRenderer.js","DragControls":"/_nicegui/2.19.0.dev0/libraries/defb651a91e9363768293c5580a3a700/DragControls.js","GLTFLoader":"/_nicegui/2.19.0.dev0/libraries/defb651a91e9363768293c5580a3a700/GLTFLoader.js","OrbitControls":"/_nicegui/2.19.0.dev0/libraries/f1d020a9b6bba98312dbf8d7a4373ad3/OrbitControls.js","STLLoader":"/_nicegui/2.19.0.dev0/libraries/f1d020a9b6bba98312dbf8d7a4373ad3/STLLoader.js","tween":"/_nicegui/2.19.0.dev0/libraries/d10486bf188f67a0766f3fde5cf04aa4/tween.umd.js"}}
-    </script>
-    
-    <link rel="modulepreload" href="/_nicegui/2.19.0.dev0/components/cb38ce54901f29431111814cbe1bb885/image.js">
-    
-    <link rel="modulepreload" href="/_nicegui/2.19.0.dev0/components/abe36db14a9767a6468458f1d6440311/link.js">
-    
-  <style>/* ! tailwindcss v3.4.5 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }.block{display:block}.flex{display:flex}.w-full{width:100%}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.text-center{text-align:center}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}</style><style data-smooth-scroll="true">
-                            html { scroll-behavior: smooth; }
-                            .back-to-top { opacity: 0; visibility: hidden; transition: all 0.3s ease; }
-                            .back-to-top.show { opacity: 1; visibility: visible; }
-                        </style></head>
-  <body class="desktop no-touch body--light" style="--q-primary: #5898d4;">
-    
-    
-    
-    
-    
-    <!-- prevent Prettier from removing this line -->
-    
-    
-    
-    
-    
+    <script type="text/x-template" id="tpl-joystick"><div data-joystick><div></div></div></script>
+    <script type="text/x-template" id="tpl-plotly"><div data-plotly></div></script>
 
-    
-    <style>*[data-joystick] > div {width: 100%; height: 100%; position: relative; }
-.js-plotly-plot .plotly .modebar-group {display: flex; }
-.js-plotly-plot .plotly .modebar-btn {display: flex; }
-.js-plotly-plot .plotly .modebar-btn svg {position: static; }
-.js-plotly-plot {box-sizing: content-box; }</style>
 
-<script type="text/x-template" id="tpl-joystick"><div data-joystick><div></div></div></script>
-<script type="text/x-template" id="tpl-plotly"><div data-plotly></div></script>
-
-    
     <div id="popup" aria-hidden="true">
-      <span>Connection lost.</span>
-      <span>Trying to reconnect...</span>
+        <span>Connection lost.</span>
+        <span>Trying to reconnect...</span>
     </div>
     <script type="module">
-      const app = createApp(parseElements(String.raw`{"0":{"tag":"q-layout","class":["nicegui-layout"],"props":{"view":"hhh lpr fff"},"children":[1]},"1":{"tag":"q-page-container","children":[2]},"2":{"tag":"q-page","children":[3]},"3":{"tag":"div","class":["nicegui-content"],"children":[4,10,67,68]},"4":{"tag":"div","class":["nicegui-row","row","w-full","justify-center","nav-container"],"style":{"padding":"20px"},"children":[5,6,7,8,9]},"5":{"tag":"q-btn","props":{"color":"primary","label":"Welcome","flat":true},"events":[{"listener_id":"3a5f179f-adb4-43b8-9d9b-f49ab3eed856","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"6":{"tag":"q-btn","props":{"color":"primary","label":"About","flat":true},"events":[{"listener_id":"9406db5f-ec60-4b8f-8e07-637d348e2f15","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"7":{"tag":"q-btn","props":{"color":"primary","label":"Projects","flat":true},"events":[{"listener_id":"504d15e7-edfb-473f-ae47-b300425b26c1","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"8":{"tag":"q-btn","props":{"color":"primary","label":"Resume","flat":true},"events":[{"listener_id":"c103f33e-731e-4e0a-b52b-afcf98fbf6ef","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"9":{"tag":"q-btn","props":{"color":"primary","label":"Contact","flat":true},"events":[{"listener_id":"5bd3e9f8-a31c-4174-86d8-8c9e5e0e8f19","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"10":{"tag":"div","class":["portfolio-container"],"style":{"padding-top":"0"},"children":[11,19,44,60]},"11":{"tag":"div","class":["welcome-section"],"children":[12]},"12":{"tag":"div","class":["content-wrapper"],"children":[13,14,15,16]},"13":{"tag":"div","props":{"innerHTML":"&lt;h1 class=\"welcome-title\"&gt;Hello, I'm &lt;strong&gt;Marcus&lt;/strong&gt;&lt;/h1&gt;"}},"14":{"tag":"div","props":{"innerHTML":"&lt;p class=\"welcome-subtitle\"&gt;Hiker. Researcher. Developer.&lt;/p&gt;"}},"15":{"tag":"nicegui-image","class":["profile-pic"],"props":{"src":"/assets/images/profile.jpeg"},"component":{"key":"cb38ce54901f29431111814cbe1bb885/image.js","name":"image","tag":"nicegui-image"}},"16":{"tag":"div","class":["about-section"],"style":{"background":"rgba(255,255,255,0.95)","margin-top":"40px"},"children":[17,18]},"17":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\" style=\"color: #333;\"&gt;About Me&lt;/h2&gt;"}},"18":{"tag":"div","props":{"innerHTML":"\n                &lt;p&gt;My journey into &lt;span class=\"highlight\"&gt;problem-solving and automation&lt;/span&gt; began in 2014, during my time in scientific research. \n                It was there that I discovered the power of using &lt;span class=\"emphasis\"&gt;programming to streamline tasks&lt;/span&gt; and uncover insights.&lt;/p&gt;\n                \n                &lt;p&gt;Since then, I've been deeply passionate about using &lt;span class=\"highlight\"&gt;technology to improve efficiency&lt;/span&gt; and solve complex challenges. \n                What started as a curiosity has evolved into a versatile skill set that spans &lt;span class=\"emphasis\"&gt;automation, data analysis, and intuitive software development&lt;/span&gt;.&lt;/p&gt;\n                \n                &lt;p&gt;I've had the opportunity to work on diverse projects — from building &lt;span class=\"emphasis\"&gt;automation pipelines for scientific workflows&lt;/span&gt; \n                to crafting &lt;span class=\"emphasis\"&gt;user-friendly interfaces for data interaction&lt;/span&gt;. Each experience has strengthened both my technical and problem-solving capabilities.&lt;/p&gt;\n                \n                &lt;p&gt;I'm a firm believer in &lt;span class=\"highlight\"&gt;continuous learning&lt;/span&gt; and always strive to stay current with modern tools, languages, and development practices.&lt;/p&gt;\n                \n                &lt;p&gt;&lt;strong style=\"font-size: 1.2em; color: #667eea;\"&gt;Let's collaborate to turn challenging problems into elegant, impactful solutions.&lt;/strong&gt;&lt;/p&gt;\n                "}},"19":{"tag":"div","class":["content-wrapper"],"children":[20]},"20":{"tag":"div","class":["projects-section"],"children":[21,22,33]},"21":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\"&gt;My Selected (Open) Projects&lt;/h2&gt;"}},"22":{"tag":"div","class":["project-card"],"children":[23,26,29]},"23":{"tag":"div","class":["project-header"],"children":[24,25]},"24":{"tag":"div","props":{"innerHTML":"&lt;div style=\"font-size: 3em; margin-right: 15px;\"&gt;🎥&lt;/div&gt;"}},"25":{"tag":"div","props":{"innerHTML":"&lt;h3 style=\"margin: 0;\"&gt;TrackIT&lt;/h3&gt;"}},"26":{"tag":"div","class":["project-content"],"children":[27,28]},"27":{"tag":"div","props":{"innerHTML":"&lt;p&gt;Complete application for tracking objects in video using OpenCV with full-stack implementation.&lt;/p&gt;"}},"28":{"tag":"div","props":{"innerHTML":"&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Python, FastAPI, SQLAlchemy, Angular, PostgreSQL&lt;/p&gt;"}},"29":{"tag":"div","class":["project-footer"],"children":[30]},"30":{"tag":"div","class":["nicegui-row","row","gap-2"],"children":[31,32]},"31":{"tag":"q-btn","class":["details-btn"],"props":{"color":"primary","label":"Details"},"events":[{"listener_id":"819babde-2dfb-4ddd-9663-3af4051c1b96","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"32":{"tag":"nicegui-link","text":"View on GitHub","class":["nicegui-link","github-btn"],"props":{"href":"https://github.com/mv-per/TrackIt","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"33":{"tag":"div","class":["project-card"],"children":[34,37,40]},"34":{"tag":"div","class":["project-header"],"children":[35,36]},"35":{"tag":"div","props":{"innerHTML":"&lt;div style=\"font-size: 3em; margin-right: 15px;\"&gt;🧪&lt;/div&gt;"}},"36":{"tag":"div","props":{"innerHTML":"&lt;h3 style=\"margin: 0;\"&gt;CheML&lt;/h3&gt;"}},"37":{"tag":"div","class":["project-content"],"children":[38,39]},"38":{"tag":"div","props":{"innerHTML":"&lt;p&gt;Comprehensive Python toolkit for machine learning in Chemical Engineering with production-ready features.&lt;/p&gt;"}},"39":{"tag":"div","props":{"innerHTML":"&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Python, scikit-learn, FastAPI, MLflow, Conda&lt;/p&gt;"}},"40":{"tag":"div","class":["project-footer"],"children":[41]},"41":{"tag":"div","class":["nicegui-row","row","gap-2"],"children":[42,43]},"42":{"tag":"q-btn","class":["details-btn"],"props":{"color":"primary","label":"Details"},"events":[{"listener_id":"c095867b-aec0-4153-8935-a4198bfe8cd7","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"43":{"tag":"nicegui-link","text":"View on GitHub","class":["nicegui-link","github-btn"],"props":{"href":"https://github.com/mv-per/cheml","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"44":{"tag":"div","class":["content-wrapper"],"children":[45]},"45":{"tag":"div","class":["resume-section"],"children":[46,47,48,49,50,51,52,53,54,55,56,57,58,59]},"46":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\"&gt;My Resume&lt;/h2&gt;"}},"47":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🎯 Professional Summary&lt;/h3&gt;"}},"48":{"tag":"div","props":{"innerHTML":"\n                &lt;p style=\"font-size: 1.1em; color: #555; margin-bottom: 25px;\"&gt;\n                    &lt;strong&gt;Chemical Engineer&lt;/strong&gt; with expertise in &lt;span class=\"highlight-achievement\"&gt;software development&lt;/span&gt;, \n                    &lt;span class=\"highlight-achievement\"&gt;data analysis&lt;/span&gt;, and &lt;span class=\"highlight-achievement\"&gt;automation&lt;/span&gt;. \n                    Passionate about applying technology to solve complex engineering challenges and optimize industrial processes.\n                &lt;/p&gt;\n            "}},"49":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;💼 Work Experience&lt;/h3&gt;"}},"50":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"margin-bottom: 25px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"company-name\"&gt;Engineering Simulation and Scientific Software&lt;/span&gt; \n                    &lt;span class=\"date-range\"&gt;(2021–2024)&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"job-title\"&gt;Software Developer&lt;/span&gt;&lt;/p&gt;\n                    &lt;ul&gt;\n                        &lt;li&gt;Optimized SQL queries and caching strategies achieving a &lt;span class=\"highlight-achievement\"&gt;30% improvement&lt;/span&gt; in backend response time&lt;/li&gt;\n                        &lt;li&gt;Developed &lt;span class=\"highlight-achievement\"&gt;Angular components&lt;/span&gt; for enhanced data management and user experience&lt;/li&gt;\n                        &lt;li&gt;Built &lt;span class=\"highlight-achievement\"&gt;microservices infrastructure&lt;/span&gt; to accelerate simulation workflows and boost scalability&lt;/li&gt;\n                        &lt;li&gt;Implemented &lt;span class=\"highlight-achievement\"&gt;GitHub Actions CI/CD&lt;/span&gt; for automated code validation and formatting&lt;/li&gt;\n                        &lt;li&gt;Streamlined deployment processes, reducing release time by &lt;span class=\"highlight-achievement\"&gt;20%&lt;/span&gt;&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 25px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"company-name\"&gt;Laboratory of Adsorption and Ion Exchange&lt;/span&gt; \n                    &lt;span class=\"date-range\"&gt;(2018–2021)&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"job-title\"&gt;Junior Researcher&lt;/span&gt; | &lt;em&gt;Brazil&lt;/em&gt;&lt;/p&gt;\n                    &lt;ul&gt;\n                        &lt;li&gt;Led training programs for &lt;span class=\"highlight-achievement\"&gt;15+ students and interns&lt;/span&gt; on lab and field research methodologies&lt;/li&gt;\n                        &lt;li&gt;Designed and operated &lt;span class=\"highlight-achievement\"&gt;high-pressure adsorption systems&lt;/span&gt; for gas separation research&lt;/li&gt;\n                        &lt;li&gt;Automated data acquisition systems improving research workflow &lt;span class=\"highlight-achievement\"&gt;efficiency by 40%&lt;/span&gt;&lt;/li&gt;\n                        &lt;li&gt;Developed &lt;span class=\"highlight-achievement\"&gt;multicomponent adsorption algorithms&lt;/span&gt; in Python and C/C++&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;\n            "}},"51":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🎓 Education&lt;/h3&gt;"}},"52":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;Ph.D. in Chemical Engineering&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;Louisiana State University, USA&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2024–Present)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Focus: Machine Learning for Sustainable Chemical Manufacturing&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;M.Sc. in Chemical Engineering&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;State University of Maringá, Brazil&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2016–2019)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Focus: Adsorption modeling using Potential Theory&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;B.Tech. in Chemical Processes&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;Federal University of Technology, Brazil&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2011–2016)&lt;/span&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;Academic Exchange Program&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;University of Nevada, Reno, USA&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2014–2015)&lt;/span&gt;&lt;/p&gt;\n                &lt;/div&gt;\n            "}},"53":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🔧 Technical Skills&lt;/h3&gt;"}},"54":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 25px;\"&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Programming Languages:&lt;/strong&gt;&lt;br&gt;\n                        Python, TypeScript, JavaScript, C/C++, MATLAB&lt;/p&gt;\n                    &lt;/div&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Web Technologies:&lt;/strong&gt;&lt;br&gt;\n                        Angular, HTML/CSS, NiceGUI, REST APIs&lt;/p&gt;\n                    &lt;/div&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Data &amp; Analytics:&lt;/strong&gt;&lt;br&gt;\n                        SQL, Data Analysis, Machine Learning, Automation&lt;/p&gt;\n                    &lt;/div&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Tools &amp; Platforms:&lt;/strong&gt;&lt;br&gt;\n                        Git, GitHub Actions, Docker, Microservices, MLFlow&lt;/p&gt;\n                    &lt;/div&gt;\n                &lt;/div&gt;\n            "}},"55":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🔬 Research Experience&lt;/h3&gt;"}},"56":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"institution\"&gt;State University of Maringá, Brazil&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Multicomponent adsorption modeling using Potential Theory on zeolites and activated carbon for gas separation applications&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"institution\"&gt;University of Nevada, Reno, USA&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Hydrodeoxygenation of biocrude and catalytic biomass conversion for sustainable biofuel production&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n            "}},"57":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;📚 Selected Publications&lt;/h3&gt;"}},"58":{"tag":"div","props":{"innerHTML":"\n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Separation and Purification Technology&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2025)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"CO₂ adsorption in NaY zeolite beds: Modeling and optimization\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Adsorption&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2023)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"Simulation of sour gas adsorption using multicomponent theory\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Journal of CO₂ Utilization&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2023)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"Zeolite regeneration for cyclic CO₂ capture applications\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Chemical Engineering Science&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2022)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"Confined fluid isotherms with PCP-SAFT DFT modeling\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Microporous and Mesoporous Materials&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2019)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"H₂S adsorption on NaY zeolite: Experimental and theoretical analysis\"&lt;/em&gt;\n                &lt;/div&gt;\n            "}},"59":{"tag":"div","props":{"innerHTML":"&lt;br&gt;"}},"60":{"tag":"div","class":["content-wrapper"],"children":[61]},"61":{"tag":"div","class":["contact-section","resume-section"],"children":[62,63]},"62":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\"&gt;Contact Information&lt;/h2&gt;"}},"63":{"tag":"div","class":["nicegui-row","row","justify-center","gap-4"],"style":{"margin-top":"30px"},"children":[64,65,66]},"64":{"tag":"nicegui-link","text":"📧 Email","class":["nicegui-link","details-btn"],"style":{"background":"var(--gradient-primary)","color":"white","text-decoration":"none"},"props":{"href":"mailto:mav.pereira@outlook.com","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"65":{"tag":"nicegui-link","text":"💼 LinkedIn","class":["nicegui-link","github-btn"],"style":{"background":"#0077b5","color":"white","text-decoration":"none"},"props":{"href":"https://linkedin.com/in/marcusvpereira","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"66":{"tag":"nicegui-link","text":"🎓 ORCID","class":["nicegui-link","github-btn"],"style":{"background":"#a6ce39","color":"white","text-decoration":"none"},"props":{"href":"https://orcid.org/0000-0003-2405-5308","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"67":{"tag":"q-btn","class":["back-to-top"],"props":{"color":"primary","label":"↑","fab":true},"events":[{"listener_id":"366f0da6-dd64-4ecf-9c56-0813b8f22c0b","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"68":{"tag":"q-btn","style":{"position":"fixed","top":"10px","right":"10px","z-index":"1000"},"props":{"color":"primary","label":"Save Portfolio"},"events":[{"listener_id":"ee773c5e-c968-4495-8230-9bb08c21b92c","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]}}`), {
-        version: "2.19.0.dev0",
-        prefix: "",
-        query: {'client_id': '5374cd24-e118-4a1f-ad5c-c413e96e6e96', 'next_message_id': 0},
-        extraHeaders: {},
-        transports: ['websocket', 'polling'],
-        quasarConfig: {"brand":{"primary":"#5898d4"},"loadingBar":{"color":"primary","skipHijack":false}},
-      });
-
-      import { default as image } from "/_nicegui/2.19.0.dev0/components/cb38ce54901f29431111814cbe1bb885/image.js";
-app.component("nicegui-image", image);
-import { default as link } from "/_nicegui/2.19.0.dev0/components/abe36db14a9767a6468458f1d6440311/link.js";
-app.component("nicegui-link", link);
-      var joystick = app.component('nicegui-joystick', {template:'#tpl-joystick',
-  async mounted() {
-    await import("nipplejs");
-    const joystick = nipplejs.create({
-      zone: this.$el.children[0],
-      position: { left: "50%", top: "50%" },
-      dynamicPage: true,
-      ...this.options,
-    });
-    joystick.on("start", (e) => this.$emit("start", e));
-    joystick.on("move", (_, data) => this.$emit("move", { data }));
-    joystick.on("end", (e) => this.$emit("end", e));
-  },
-  props: {
-    options: Object,
-  },
-});
-var plotly = app.component('nicegui-plotly', {template:'#tpl-plotly',
-  async mounted() {
-    await import("plotly");
-    this.update();
-  },
-  methods: {
-    update() {
-      // wait for plotly to be loaded
-      if (typeof Plotly === "undefined") {
-        setTimeout(this.update, 10);
-        return;
-      }
-
-      // default responsive to true
-      const options = this.options;
-      if (options.config === undefined) options.config = { responsive: true };
-      if (options.config.responsive === undefined) options.config.responsive = true;
-
-      // re-use plotly instance if config is the same
-      if (JSON.stringify(options.config) == JSON.stringify(this.last_options.config)) {
-        Plotly.react(this.$el.id, this.options.data, this.options.layout);
-      } else {
-        Plotly.newPlot(this.$el.id, this.options.data, this.options.layout, options.config);
-        this.set_handlers();
-      }
-
-      // store last options
-      this.last_options = options;
-    },
-    set_handlers() {
-      // forward events
-      for (const name of [
-        // source: https://plotly.com/javascript/plotlyjs-events/
-        "plotly_click",
-        "plotly_legendclick",
-        "plotly_selecting",
-        "plotly_selected",
-        "plotly_hover",
-        "plotly_unhover",
-        "plotly_legenddoubleclick",
-        "plotly_restyle",
-        "plotly_relayout",
-        "plotly_webglcontextlost",
-        "plotly_afterplot",
-        "plotly_autosize",
-        "plotly_deselect",
-        "plotly_doubleclick",
-        "plotly_redraw",
-        "plotly_animated",
-      ]) {
-        this.$el.on(name, (event) => {
-          const args = {
-            ...event,
-            points: event?.points?.map((p) => ({
-              ...p,
-              fullData: undefined,
-              xaxis: undefined,
-              yaxis: undefined,
-            })),
-            xaxes: undefined,
-            yaxes: undefined,
-          };
-          this.$emit(name, args);
+        const app = createApp(parseElements(String.raw`{"0":{"tag":"q-layout","class":["nicegui-layout"],"props":{"view":"hhh lpr fff"},"children":[1]},"1":{"tag":"q-page-container","children":[2]},"2":{"tag":"q-page","children":[3]},"3":{"tag":"div","class":["nicegui-content"],"children":[4,10,67,68]},"4":{"tag":"div","class":["nicegui-row","row","w-full","justify-center","nav-container"],"style":{"padding":"20px"},"children":[5,6,7,8,9]},"5":{"tag":"q-btn","props":{"color":"primary","label":"Welcome","flat":true},"events":[{"listener_id":"3a5f179f-adb4-43b8-9d9b-f49ab3eed856","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"6":{"tag":"q-btn","props":{"color":"primary","label":"About","flat":true},"events":[{"listener_id":"9406db5f-ec60-4b8f-8e07-637d348e2f15","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"7":{"tag":"q-btn","props":{"color":"primary","label":"Projects","flat":true},"events":[{"listener_id":"504d15e7-edfb-473f-ae47-b300425b26c1","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"8":{"tag":"q-btn","props":{"color":"primary","label":"Resume","flat":true},"events":[{"listener_id":"c103f33e-731e-4e0a-b52b-afcf98fbf6ef","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"9":{"tag":"q-btn","props":{"color":"primary","label":"Contact","flat":true},"events":[{"listener_id":"5bd3e9f8-a31c-4174-86d8-8c9e5e0e8f19","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"10":{"tag":"div","class":["portfolio-container"],"style":{"padding-top":"0"},"children":[11,19,44,60]},"11":{"tag":"div","class":["welcome-section"],"children":[12]},"12":{"tag":"div","class":["content-wrapper"],"children":[13,14,15,16]},"13":{"tag":"div","props":{"innerHTML":"&lt;h1 class=\"welcome-title\"&gt;Hello, I'm &lt;strong&gt;Marcus&lt;/strong&gt;&lt;/h1&gt;"}},"14":{"tag":"div","props":{"innerHTML":"&lt;p class=\"welcome-subtitle\"&gt;Hiker. Researcher. Developer.&lt;/p&gt;"}},"15":{"tag":"nicegui-image","class":["profile-pic"],"props":{"src":"/assets/images/profile.jpeg"},"component":{"key":"cb38ce54901f29431111814cbe1bb885/image.js","name":"image","tag":"nicegui-image"}},"16":{"tag":"div","class":["about-section"],"style":{"background":"rgba(255,255,255,0.95)","margin-top":"40px"},"children":[17,18]},"17":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\" style=\"color: #333;\"&gt;About Me&lt;/h2&gt;"}},"18":{"tag":"div","props":{"innerHTML":"\n                &lt;p&gt;My journey into &lt;span class=\"highlight\"&gt;problem-solving and automation&lt;/span&gt; began in 2014, during my time in scientific research. \n                It was there that I discovered the power of using &lt;span class=\"emphasis\"&gt;programming to streamline tasks&lt;/span&gt; and uncover insights.&lt;/p&gt;\n                \n                &lt;p&gt;Since then, I've been deeply passionate about using &lt;span class=\"highlight\"&gt;technology to improve efficiency&lt;/span&gt; and solve complex challenges. \n                What started as a curiosity has evolved into a versatile skill set that spans &lt;span class=\"emphasis\"&gt;automation, data analysis, and intuitive software development&lt;/span&gt;.&lt;/p&gt;\n                \n                &lt;p&gt;I've had the opportunity to work on diverse projects — from building &lt;span class=\"emphasis\"&gt;automation pipelines for scientific workflows&lt;/span&gt; \n                to crafting &lt;span class=\"emphasis\"&gt;user-friendly interfaces for data interaction&lt;/span&gt;. Each experience has strengthened both my technical and problem-solving capabilities.&lt;/p&gt;\n                \n                &lt;p&gt;I'm a firm believer in &lt;span class=\"highlight\"&gt;continuous learning&lt;/span&gt; and always strive to stay current with modern tools, languages, and development practices.&lt;/p&gt;\n                \n                &lt;p&gt;&lt;strong style=\"font-size: 1.2em; color: #667eea;\"&gt;Let's collaborate to turn challenging problems into elegant, impactful solutions.&lt;/strong&gt;&lt;/p&gt;\n                "}},"19":{"tag":"div","class":["content-wrapper"],"children":[20]},"20":{"tag":"div","class":["projects-section"],"children":[21,22,33]},"21":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\"&gt;My Selected (Open) Projects&lt;/h2&gt;"}},"22":{"tag":"div","class":["project-card"],"children":[23,26,29]},"23":{"tag":"div","class":["project-header"],"children":[24,25]},"24":{"tag":"div","props":{"innerHTML":"&lt;div style=\"font-size: 3em; margin-right: 15px;\"&gt;🎥&lt;/div&gt;"}},"25":{"tag":"div","props":{"innerHTML":"&lt;h3 style=\"margin: 0;\"&gt;TrackIT&lt;/h3&gt;"}},"26":{"tag":"div","class":["project-content"],"children":[27,28]},"27":{"tag":"div","props":{"innerHTML":"&lt;p&gt;Complete application for tracking objects in video using OpenCV with full-stack implementation.&lt;/p&gt;"}},"28":{"tag":"div","props":{"innerHTML":"&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Python, FastAPI, SQLAlchemy, Angular, PostgreSQL&lt;/p&gt;"}},"29":{"tag":"div","class":["project-footer"],"children":[30]},"30":{"tag":"div","class":["nicegui-row","row","gap-2"],"children":[31,32]},"31":{"tag":"q-btn","class":["details-btn"],"props":{"color":"primary","label":"Details"},"events":[{"listener_id":"819babde-2dfb-4ddd-9663-3af4051c1b96","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"32":{"tag":"nicegui-link","text":"View on GitHub","class":["nicegui-link","github-btn"],"props":{"href":"https://github.com/mv-per/TrackIt","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"33":{"tag":"div","class":["project-card"],"children":[34,37,40]},"34":{"tag":"div","class":["project-header"],"children":[35,36]},"35":{"tag":"div","props":{"innerHTML":"&lt;div style=\"font-size: 3em; margin-right: 15px;\"&gt;🧪&lt;/div&gt;"}},"36":{"tag":"div","props":{"innerHTML":"&lt;h3 style=\"margin: 0;\"&gt;CheML&lt;/h3&gt;"}},"37":{"tag":"div","class":["project-content"],"children":[38,39]},"38":{"tag":"div","props":{"innerHTML":"&lt;p&gt;Comprehensive Python toolkit for machine learning in Chemical Engineering with production-ready features.&lt;/p&gt;"}},"39":{"tag":"div","props":{"innerHTML":"&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Python, scikit-learn, FastAPI, MLflow, Conda&lt;/p&gt;"}},"40":{"tag":"div","class":["project-footer"],"children":[41]},"41":{"tag":"div","class":["nicegui-row","row","gap-2"],"children":[42,43]},"42":{"tag":"q-btn","class":["details-btn"],"props":{"color":"primary","label":"Details"},"events":[{"listener_id":"c095867b-aec0-4153-8935-a4198bfe8cd7","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"43":{"tag":"nicegui-link","text":"View on GitHub","class":["nicegui-link","github-btn"],"props":{"href":"https://github.com/mv-per/cheml","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"44":{"tag":"div","class":["content-wrapper"],"children":[45]},"45":{"tag":"div","class":["resume-section"],"children":[46,47,48,49,50,51,52,53,54,55,56,57,58,59]},"46":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\"&gt;My Resume&lt;/h2&gt;"}},"47":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🎯 Professional Summary&lt;/h3&gt;"}},"48":{"tag":"div","props":{"innerHTML":"\n                &lt;p style=\"font-size: 1.1em; color: #555; margin-bottom: 25px;\"&gt;\n                    &lt;strong&gt;Chemical Engineer&lt;/strong&gt; with expertise in &lt;span class=\"highlight-achievement\"&gt;software development&lt;/span&gt;, \n                    &lt;span class=\"highlight-achievement\"&gt;data analysis&lt;/span&gt;, and &lt;span class=\"highlight-achievement\"&gt;automation&lt;/span&gt;. \n                    Passionate about applying technology to solve complex engineering challenges and optimize industrial processes.\n                &lt;/p&gt;\n            "}},"49":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;💼 Work Experience&lt;/h3&gt;"}},"50":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"margin-bottom: 25px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"company-name\"&gt;Engineering Simulation and Scientific Software&lt;/span&gt; \n                    &lt;span class=\"date-range\"&gt;(2021–2024)&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"job-title\"&gt;Software Developer&lt;/span&gt;&lt;/p&gt;\n                    &lt;ul&gt;\n                        &lt;li&gt;Optimized SQL queries and caching strategies achieving a &lt;span class=\"highlight-achievement\"&gt;30% improvement&lt;/span&gt; in backend response time&lt;/li&gt;\n                        &lt;li&gt;Developed &lt;span class=\"highlight-achievement\"&gt;Angular components&lt;/span&gt; for enhanced data management and user experience&lt;/li&gt;\n                        &lt;li&gt;Built &lt;span class=\"highlight-achievement\"&gt;microservices infrastructure&lt;/span&gt; to accelerate simulation workflows and boost scalability&lt;/li&gt;\n                        &lt;li&gt;Implemented &lt;span class=\"highlight-achievement\"&gt;GitHub Actions CI/CD&lt;/span&gt; for automated code validation and formatting&lt;/li&gt;\n                        &lt;li&gt;Streamlined deployment processes, reducing release time by &lt;span class=\"highlight-achievement\"&gt;20%&lt;/span&gt;&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 25px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"company-name\"&gt;Laboratory of Adsorption and Ion Exchange&lt;/span&gt; \n                    &lt;span class=\"date-range\"&gt;(2018–2021)&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"job-title\"&gt;Junior Researcher&lt;/span&gt; | &lt;em&gt;Brazil&lt;/em&gt;&lt;/p&gt;\n                    &lt;ul&gt;\n                        &lt;li&gt;Led training programs for &lt;span class=\"highlight-achievement\"&gt;15+ students and interns&lt;/span&gt; on lab and field research methodologies&lt;/li&gt;\n                        &lt;li&gt;Designed and operated &lt;span class=\"highlight-achievement\"&gt;high-pressure adsorption systems&lt;/span&gt; for gas separation research&lt;/li&gt;\n                        &lt;li&gt;Automated data acquisition systems improving research workflow &lt;span class=\"highlight-achievement\"&gt;efficiency by 40%&lt;/span&gt;&lt;/li&gt;\n                        &lt;li&gt;Developed &lt;span class=\"highlight-achievement\"&gt;multicomponent adsorption algorithms&lt;/span&gt; in Python and C/C++&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;\n            "}},"51":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🎓 Education&lt;/h3&gt;"}},"52":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;Ph.D. in Chemical Engineering&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;Louisiana State University, USA&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2024–Present)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Focus: Machine Learning for Sustainable Chemical Manufacturing&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;M.Sc. in Chemical Engineering&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;State University of Maringá, Brazil&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2016–2019)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Focus: Adsorption modeling using Potential Theory&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;B.Tech. in Chemical Processes&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;Federal University of Technology, Brazil&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2011–2016)&lt;/span&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;Academic Exchange Program&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;University of Nevada, Reno, USA&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2014–2015)&lt;/span&gt;&lt;/p&gt;\n                &lt;/div&gt;\n            "}},"53":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🔧 Technical Skills&lt;/h3&gt;"}},"54":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 25px;\"&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Programming Languages:&lt;/strong&gt;&lt;br&gt;\n                        Python, TypeScript, JavaScript, C/C++, MATLAB&lt;/p&gt;\n                    &lt;/div&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Web Technologies:&lt;/strong&gt;&lt;br&gt;\n                        Angular, HTML/CSS, NiceGUI, REST APIs&lt;/p&gt;\n                    &lt;/div&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Data &amp; Analytics:&lt;/strong&gt;&lt;br&gt;\n                        SQL, Data Analysis, Machine Learning, Automation&lt;/p&gt;\n                    &lt;/div&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Tools &amp; Platforms:&lt;/strong&gt;&lt;br&gt;\n                        Git, GitHub Actions, Docker, Microservices, MLFlow&lt;/p&gt;\n                    &lt;/div&gt;\n                &lt;/div&gt;\n            "}},"55":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🔬 Research Experience&lt;/h3&gt;"}},"56":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"institution\"&gt;State University of Maringá, Brazil&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Multicomponent adsorption modeling using Potential Theory on zeolites and activated carbon for gas separation applications&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"institution\"&gt;University of Nevada, Reno, USA&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Hydrodeoxygenation of biocrude and catalytic biomass conversion for sustainable biofuel production&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n            "}},"57":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;📚 Selected Publications&lt;/h3&gt;"}},"58":{"tag":"div","props":{"innerHTML":"\n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Separation and Purification Technology&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2025)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"CO₂ adsorption in NaY zeolite beds: Modeling and optimization\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Adsorption&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2023)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"Simulation of sour gas adsorption using multicomponent theory\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Journal of CO₂ Utilization&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2023)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"Zeolite regeneration for cyclic CO₂ capture applications\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Chemical Engineering Science&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2022)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"Confined fluid isotherms with PCP-SAFT DFT modeling\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Microporous and Mesoporous Materials&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2019)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"H₂S adsorption on NaY zeolite: Experimental and theoretical analysis\"&lt;/em&gt;\n                &lt;/div&gt;\n            "}},"59":{"tag":"div","props":{"innerHTML":"&lt;br&gt;"}},"60":{"tag":"div","class":["content-wrapper"],"children":[61]},"61":{"tag":"div","class":["contact-section","resume-section"],"children":[62,63]},"62":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\"&gt;Contact Information&lt;/h2&gt;"}},"63":{"tag":"div","class":["nicegui-row","row","justify-center","gap-4"],"style":{"margin-top":"30px"},"children":[64,65,66]},"64":{"tag":"nicegui-link","text":"📧 Email","class":["nicegui-link","details-btn"],"style":{"background":"var(--gradient-primary)","color":"white","text-decoration":"none"},"props":{"href":"mailto:mav.pereira@outlook.com","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"65":{"tag":"nicegui-link","text":"💼 LinkedIn","class":["nicegui-link","github-btn"],"style":{"background":"#0077b5","color":"white","text-decoration":"none"},"props":{"href":"https://linkedin.com/in/marcusvpereira","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"66":{"tag":"nicegui-link","text":"🎓 ORCID","class":["nicegui-link","github-btn"],"style":{"background":"#a6ce39","color":"white","text-decoration":"none"},"props":{"href":"https://orcid.org/0000-0003-2405-5308","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"67":{"tag":"q-btn","class":["back-to-top"],"props":{"color":"primary","label":"↑","fab":true},"events":[{"listener_id":"366f0da6-dd64-4ecf-9c56-0813b8f22c0b","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"68":{"tag":"q-btn","style":{"position":"fixed","top":"10px","right":"10px","z-index":"1000"},"props":{"color":"primary","label":"Save Portfolio"},"events":[{"listener_id":"ee773c5e-c968-4495-8230-9bb08c21b92c","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]}}`), {
+            version: "2.19.0.dev0",
+            prefix: "",
+            query: { 'client_id': '5374cd24-e118-4a1f-ad5c-c413e96e6e96', 'next_message_id': 0 },
+            extraHeaders: {},
+            transports: ['websocket', 'polling'],
+            quasarConfig: { "brand": { "primary": "#5898d4" }, "loadingBar": { "color": "primary", "skipHijack": false } },
         });
-      }
-    },
-  },
-  data() {
-    return {
-      last_options: {},
-    };
-  },
-  props: {
-    options: Object,
-  },
-});
 
-      const dark = False;
-      Quasar.lang.set(Quasar.lang["en-US".replace('-', '')]);
-      Quasar.Dark.set(dark === None ? "auto" : dark);
-      
-      if (dark !== None) tailwind.config.darkMode = "class";
-      if (dark === True) document.body.classList.add("dark");
-      
+        import { default as image } from "/_nicegui/2.19.0.dev0/components/cb38ce54901f29431111814cbe1bb885/image.js";
+        app.component("nicegui-image", image);
+        import { default as link } from "/_nicegui/2.19.0.dev0/components/abe36db14a9767a6468458f1d6440311/link.js";
+        app.component("nicegui-link", link);
+        var joystick = app.component('nicegui-joystick', {
+            template: '#tpl-joystick',
+            async mounted() {
+                await import("nipplejs");
+                const joystick = nipplejs.create({
+                    zone: this.$el.children[0],
+                    position: { left: "50%", top: "50%" },
+                    dynamicPage: true,
+                    ...this.options,
+                });
+                joystick.on("start", (e) => this.$emit("start", e));
+                joystick.on("move", (_, data) => this.$emit("move", { data }));
+                joystick.on("end", (e) => this.$emit("end", e));
+            },
+            props: {
+                options: Object,
+            },
+        });
+        var plotly = app.component('nicegui-plotly', {
+            template: '#tpl-plotly',
+            async mounted() {
+                await import("plotly");
+                this.update();
+            },
+            methods: {
+                update() {
+                    // wait for plotly to be loaded
+                    if (typeof Plotly === "undefined") {
+                        setTimeout(this.update, 10);
+                        return;
+                    }
 
-      app.mount("#app");
-    </script>
-  
-<protonpass-root-bca0 data-protonpass-role="root" data-protonpass-theme="dark"></protonpass-root-bca0><script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Smooth scroll functionality
-                            function smoothScrollTo(selector) {
-                                const element = document.querySelector(selector);
-                                if (element) {
-                                    element.scrollIntoView({behavior: 'smooth'});
-                                }
-                            }
-                            
-                            // Back to top functionality
-                            function scrollToTop() {
-                                window.scrollTo({top: 0, behavior: 'smooth'});
-                            }
-                            
-                            // Re-attach event listeners for navigation buttons
-                            document.querySelectorAll('button').forEach(btn => {
-                                const text = btn.textContent.trim();
-                                if (text === 'Welcome') {
-                                    btn.onclick = () => smoothScrollTo('.welcome-section');
-                                } else if (text === 'About') {
-                                    btn.onclick = () => smoothScrollTo('.about-section');
-                                } else if (text === 'Projects') {
-                                    btn.onclick = () => smoothScrollTo('.projects-section');
-                                } else if (text === 'Resume') {
-                                    btn.onclick = () => smoothScrollTo('.resume-section');
-                                } else if (text === 'Contact') {
-                                    btn.onclick = () => smoothScrollTo('.contact-section');
-                                } else if (text === '↑') {
-                                    btn.onclick = scrollToTop;
-                                } else if (text === 'Details') {
-                                    // Keep existing modal functionality
-                                    // This will need to be handled separately
-                                }
-                            });
-                            
-                            // Show/hide back to top button
-                            window.addEventListener('scroll', function() {
-                                const backToTopBtn = document.querySelector('.back-to-top');
-                                if (backToTopBtn) {
-                                    if (window.pageYOffset > 300) {
-                                        backToTopBtn.style.opacity = '1';
-                                        backToTopBtn.style.visibility = 'visible';
-                                    } else {
-                                        backToTopBtn.style.opacity = '0';
-                                        backToTopBtn.style.visibility = 'hidden';
-                                    }
-                                }
-                            });
-                            
-                            // Handle GitHub links
-                            document.querySelectorAll('a[href*="github.com"]').forEach(link => {
-                                link.target = '_blank';
-                                link.rel = 'noopener noreferrer';
-                            });
-                            
-                            // Handle email and other external links
-                            document.querySelectorAll('a[href^="mailto:"], a[href^="https://linkedin.com"], a[href^="https://orcid.org"]').forEach(link => {
-                                link.target = '_blank';
-                                link.rel = 'noopener noreferrer';
-                            });
+                    // default responsive to true
+                    const options = this.options;
+                    if (options.config === undefined) options.config = { responsive: true };
+                    if (options.config.responsive === undefined) options.config.responsive = true;
+
+                    // re-use plotly instance if config is the same
+                    if (JSON.stringify(options.config) == JSON.stringify(this.last_options.config)) {
+                        Plotly.react(this.$el.id, this.options.data, this.options.layout);
+                    } else {
+                        Plotly.newPlot(this.$el.id, this.options.data, this.options.layout, options.config);
+                        this.set_handlers();
+                    }
+
+                    // store last options
+                    this.last_options = options;
+                },
+                set_handlers() {
+                    // forward events
+                    for (const name of [
+                        // source: https://plotly.com/javascript/plotlyjs-events/
+                        "plotly_click",
+                        "plotly_legendclick",
+                        "plotly_selecting",
+                        "plotly_selected",
+                        "plotly_hover",
+                        "plotly_unhover",
+                        "plotly_legenddoubleclick",
+                        "plotly_restyle",
+                        "plotly_relayout",
+                        "plotly_webglcontextlost",
+                        "plotly_afterplot",
+                        "plotly_autosize",
+                        "plotly_deselect",
+                        "plotly_doubleclick",
+                        "plotly_redraw",
+                        "plotly_animated",
+                    ]) {
+                        this.$el.on(name, (event) => {
+                            const args = {
+                                ...event,
+                                points: event?.points?.map((p) => ({
+                                    ...p,
+                                    fullData: undefined,
+                                    xaxis: undefined,
+                                    yaxis: undefined,
+                                })),
+                                xaxes: undefined,
+                                yaxes: undefined,
+                            };
+                            this.$emit(name, args);
                         });
-                    </script></body></html>
+                    }
+                },
+            },
+            data() {
+                return {
+                    last_options: {},
+                };
+            },
+            props: {
+                options: Object,
+            },
+        });
+
+        const dark = false;
+        Quasar.lang.set(Quasar.lang["en-US".replace('-', '')]);
+        Quasar.Dark.set(dark === None ? "auto" : dark);
+
+        if (dark !== None) tailwind.config.darkMode = "class";
+
+        if (dark === True) document.body.classList.add("dark");
+
+
+        app.mount("#app");
+    </script>
+
+    <protonpass-root-bca0 data-protonpass-role="root" data-protonpass-theme="dark"></protonpass-root-bca0>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scroll functionality
+            function smoothScrollTo(selector) {
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    console.warn(`Element with selector "${selector}" not found.`);
+                }
+            }
+
+            // Back to top functionality
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Re-attach event listeners for navigation buttons
+            document.querySelectorAll('button').forEach(btn => {
+                const text = btn.textContent.trim();
+                if (text === 'Welcome') {
+                    btn.onclick = () => smoothScrollTo('.welcome-section');
+                } else if (text === 'About') {
+                    btn.onclick = () => smoothScrollTo('.about-section');
+                } else if (text === 'Projects') {
+                    btn.onclick = () => smoothScrollTo('.projects-section');
+                } else if (text === 'Resume') {
+                    btn.onclick = () => smoothScrollTo('.resume-section');
+                } else if (text === 'Contact') {
+                    btn.onclick = () => smoothScrollTo('.contact-section');
+                } else if (text === '↑') {
+                    btn.onclick = scrollToTop;
+                } else if (text === 'Details') {
+                    // Keep existing modal functionality
+                    // This will need to be handled separately
+                }
+            });
+
+            // Show/hide back to top button
+            window.addEventListener('scroll', function () {
+                const backToTopBtn = document.querySelector('.back-to-top');
+                if (backToTopBtn) {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.classList.add('show');
+                    } else {
+                        backToTopBtn.classList.remove('show');
+                    }
+                }
+            });
+
+            // Handle GitHub links
+            document.querySelectorAll('a[href*="github.com"]').forEach(link => {
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+            });
+
+            // Handle email and other external links
+            document.querySelectorAll('a[href^="mailto:"], a[href^="https://linkedin.com"], a[href^="https://orcid.org"]').forEach(link => {
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+            });
+        });
+    </script>
+</body>
+
+</html>
