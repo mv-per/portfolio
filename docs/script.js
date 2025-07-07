@@ -79,6 +79,15 @@ function showModal(content) {
     modal.style.borderRadius = '8px';
     modal.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
     modal.style.transition = 'transform 0.3s ease';
+    modal.style.width = '50%'; // Default width for desktop
+    modal.style.maxWidth = '600px'; // Limit maximum width
+
+    // Adjust modal for mobile view
+    if (window.innerWidth <= 768) {
+        modal.style.width = '95%'; // Use 95% of the screen width on mobile
+        modal.style.padding = '10px'; // Adjust padding for smaller screens
+    }
+
     modal.innerHTML = content;
 
     // Create close button
