@@ -959,18 +959,137 @@ def save_on_demand():
     async def do_save():
         try:
             from nicegui import context
-            # Check if we have a valid client context and it's not the auto-index page
-            if hasattr(context, 'client') and context.client and hasattr(context.client, 'id'):
-                html = await context.client.run_javascript("document.querySelector('html').outerHTML")
+            if hasattr(context, 'client') and context.client:
+                # Get the complete HTML including all rendered content and styles
+                html = await context.client.run_javascript("""
+                    // Get the complete document HTML with all styles and scripts
+                    const fullHtml = document.documentElement.outerHTML;
+                    
+                    // Clean up NiceGUI-specific elements that won't work standalone
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(fullHtml, 'text/html');
+                    
+                    // Remove NiceGUI-specific scripts and components
+                    const scriptsToRemove = doc.querySelectorAll('script[src*="_nicegui"]');
+                    scriptsToRemove.forEach(script => script.remove());
+                    
+                    // Remove NiceGUI app components
+                    const appDiv = doc.querySelector('#app');
+                    if (appDiv) {
+                        // Extract the actual content from the app div
+                        const content = appDiv.innerHTML;
+                        appDiv.innerHTML = content;
+                    }
+                    
+                    // Add standalone JavaScript for navigation
+                    const standaloneScript = document.createElement('script');
+                    standaloneScript.textContent = `
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Smooth scroll functionality
+                            function smoothScrollTo(selector) {
+                                const element = document.querySelector(selector);
+                                if (element) {
+                                    element.scrollIntoView({behavior: 'smooth'});
+                                }
+                            }
+                            
+                            // Back to top functionality
+                            function scrollToTop() {
+                                window.scrollTo({top: 0, behavior: 'smooth'});
+                            }
+                            
+                            // Re-attach event listeners for navigation buttons
+                            document.querySelectorAll('button').forEach(btn => {
+                                const text = btn.textContent.trim();
+                                if (text === 'Welcome') {
+                                    btn.onclick = () => smoothScrollTo('.welcome-section');
+                                } else if (text === 'About') {
+                                    btn.onclick = () => smoothScrollTo('.about-section');
+                                } else if (text === 'Projects') {
+                                    btn.onclick = () => smoothScrollTo('.projects-section');
+                                } else if (text === 'Resume') {
+                                    btn.onclick = () => smoothScrollTo('.resume-section');
+                                } else if (text === 'Contact') {
+                                    btn.onclick = () => smoothScrollTo('.contact-section');
+                                } else if (text === '↑') {
+                                    btn.onclick = scrollToTop;
+                                } else if (text === 'Details') {
+                                    // Keep existing modal functionality
+                                    // This will need to be handled separately
+                                }
+                            });
+                            
+                            // Show/hide back to top button
+                            window.addEventListener('scroll', function() {
+                                const backToTopBtn = document.querySelector('.back-to-top');
+                                if (backToTopBtn) {
+                                    if (window.pageYOffset > 300) {
+                                        backToTopBtn.style.opacity = '1';
+                                        backToTopBtn.style.visibility = 'visible';
+                                    } else {
+                                        backToTopBtn.style.opacity = '0';
+                                        backToTopBtn.style.visibility = 'hidden';
+                                    }
+                                }
+                            });
+                            
+                            // Handle GitHub links
+                            document.querySelectorAll('a[href*="github.com"]').forEach(link => {
+                                link.target = '_blank';
+                                link.rel = 'noopener noreferrer';
+                            });
+                            
+                            // Handle email and other external links
+                            document.querySelectorAll('a[href^="mailto:"], a[href^="https://linkedin.com"], a[href^="https://orcid.org"]').forEach(link => {
+                                link.target = '_blank';
+                                link.rel = 'noopener noreferrer';
+                            });
+                        });
+                    `;
+                    
+                    // Remove the save button from the exported HTML
+                    const saveButton = doc.querySelector('button[style*="position: fixed"][style*="top: 10px"]');
+                    if (saveButton) {
+                        saveButton.remove();
+                    }
+                    
+                    // Remove any NiceGUI notification elements
+                    const notifications = doc.querySelectorAll('[id*="q-notify"], [data-v-app]');
+                    notifications.forEach(el => el.remove());
+                    
+                    // Add the standalone script to the body
+                    doc.body.appendChild(standaloneScript);
+                    
+                    // Add smooth scrolling CSS if not present
+                    if (!doc.querySelector('style[data-smooth-scroll]')) {
+                        const smoothScrollStyle = document.createElement('style');
+                        smoothScrollStyle.setAttribute('data-smooth-scroll', 'true');
+                        smoothScrollStyle.textContent = `
+                            html { scroll-behavior: smooth; }
+                            .back-to-top { opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+                            .back-to-top.show { opacity: 1; visibility: visible; }
+                        `;
+                        doc.head.appendChild(smoothScrollStyle);
+                    }
+                    
+                    return '<!DOCTYPE html>\\n' + doc.documentElement.outerHTML;
+                """)
+                
+                # Write the cleaned HTML to file
                 with open("./index.html", "w", encoding="utf-8") as file:
                     file.write(html)
-                ui.notify("Portfolio saved as index.html", type='positive')
+                    
+                ui.notify("Portfolio extracted and saved as standalone index.html!", type='positive')
+                print("Portfolio successfully extracted from live website!")
+                
             else:
                 create_basic_html_structure()
-                ui.notify("Created basic HTML structure", type='warning')
+                ui.notify("No client context available, created basic structure", type='warning')
+                
         except Exception as e:
+            print(f"Error extracting from website: {e}")
             create_basic_html_structure()
-            ui.notify(f"Error saving: {e}", type='negative')
+            ui.notify(f"Error extracting: {e}", type='negative')
     return do_save
 
 if __name__ in {"__main__", "__mp_main__"}:

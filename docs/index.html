@@ -1,271 +1,399 @@
-<!DOCTYPE html>
-<html lang="en">
+<html style="padding: 0%; margin:0%;">
+
 
 <head>
-    <title>Marcus - Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/_nicegui/2.19.0.dev0/static/favicon.ico" rel="shortcut icon">
-    <link href="/_nicegui/2.19.0.dev0/static/nicegui.css" rel="stylesheet" type="text/css">
-    <link href="/_nicegui/2.19.0.dev0/static/fonts.css" rel="stylesheet" type="text/css">
-    <link href="/_nicegui/2.19.0.dev0/static/quasar.prod.css" rel="stylesheet" type="text/css">
-    <style>
-        /* CSS Variables for consistent theming */
-        :root {
-            --primary-color: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary-color: #8b5cf6;
-            --accent-color: #06b6d4;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --text-light: #9ca3af;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-accent: #f1f5f9;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            --gradient-secondary: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
-            --border-radius: 12px;
-            --border-radius-lg: 16px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus Vinicius Pereira - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
 </head>
 
-<body class="desktop no-touch body--light" style="--q-primary: #5898d4;">
+<body style="padding: 0%; margin:0%;">
+    <nav class="nav-container"
+        style="padding: 5px; background-color: #333; display: flex; justify-content: center; gap: 20px; position: sticky; top: 0; z-index: 1000;">
+        <button onclick="document.getElementById('welcome').scrollIntoView({behavior: 'smooth'});"
+            style="background: none; border: none; font-size: 1em; cursor: pointer;">Welcome</button>
+        <button onclick="document.querySelector('.about-section').scrollIntoView({behavior: 'smooth'});"
+            style="background: none; border: none; font-size: 1em; cursor: pointer;">About</button>
+        <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'});"
+            style="background: none; border: none; font-size: 1em; cursor: pointer;">Projects</button>
+        <button onclick="document.getElementById('resume').scrollIntoView({behavior: 'smooth'});"
+            style="background: none; border: none; font-size: 1em; cursor: pointer;">Resume</button>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});"
+            style="background: none; border: none; font-size: 1em; cursor: pointer;">Contact</button>
+    </nav>
 
+    <section id="welcome">
 
+        <div class="welcome-section">
 
+            <div class="content-wrapper">
+                <h1 class="welcome-title">Hello, I'm <strong>Marcus</strong></h1>
+                <p class="welcome-subtitle">Hiker | Researcher | Developer</p>
 
+                <img src="./assets/images/profile.jpeg" alt="Marcus Vinicius Pereira" class="profile-pic">
 
-    <!-- prevent Prettier from removing this line -->
+                <div class="about-section">
+                    <div>
+                        <h2 class="section-title" style="color: #333;">About Me</h2>
 
+                        <p>My journey into <span class="highlight">problem-solving and automation</span> began in 2014,
+                            during my time in scientific research.
+                            It was there that I discovered the power of using <span class="emphasis">programming to
+                                streamline tasks</span> and uncover insights.</p>
 
+                        <p>Since then, I've been deeply passionate about using <span class="highlight">technology to
+                                improve
+                                efficiency</span> and solve complex challenges.
+                            What started as a curiosity has evolved into a versatile skill set that spans <span
+                                class="emphasis">automation, data analysis, and intuitive software development</span>.
+                        </p>
 
+                        <p>I've had the opportunity to work on diverse projects — from building <span
+                                class="emphasis">automation pipelines for scientific workflows</span>
+                            to crafting <span class="emphasis">user-friendly interfaces for data interaction</span>.
+                            Each
+                            experience has strengthened both my technical and problem-solving capabilities.</p>
 
+                        <p>I'm a firm believer in <span class="highlight">continuous learning</span> and always strive
+                            to
+                            stay current with modern tools, languages, and development practices.</p>
 
+                        <p><strong style="font-size: 1.2em; color: #667eea;">Let's collaborate to turn challenging
+                                problems
+                                into elegant, impactful solutions.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="projects">
+        <div class="content-wrapper">
+            <div class="projects-section">
+                <h2 class="section-title">My Selected (Open) Projects</h2>
 
-    <style>
-        *[data-joystick]>div {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
+                <!-- TrackIT Project -->
+                <div class="project-card">
+                    <div class="project-header" style="display: flex; align-items: center;">
+                        <div style="font-size: 3em; margin-right: 15px;">🎥</div>
+                        <h3 style="margin: 0;">TrackIT</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Complete application for tracking objects in video using OpenCV with full-stack
+                            implementation.
+                        </p>
+                        <p><strong>Technologies:</strong> Python, FastAPI, SQLAlchemy, Angular, PostgreSQL</p>
+                    </div>
+                    <div class="project-footer" style="display: flex; gap: 10px;">
+                        <button class="details-btn" onclick="showTrackITDetails()">Details</button>
+                        <a href="https://github.com/mv-per/TrackIt" target="_blank" class="github-btn">View on
+                            GitHub</a>
+                    </div>
+                </div>
 
-        .js-plotly-plot .plotly .modebar-group {
-            display: flex;
-        }
+                <!-- CheML Project -->
+                <div class="project-card">
+                    <div class="project-header" style="display: flex; align-items: center;">
+                        <div style="font-size: 3em; margin-right: 15px;">🧪</div>
+                        <h3 style="margin: 0;">CheML</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Comprehensive Python toolkit for machine learning in Chemical Engineering with
+                            production-ready features.
+                        </p>
+                        <p><strong>Technologies:</strong> Python, scikit-learn, FastAPI, MLflow, Conda</p>
+                    </div>
+                    <div class="project-footer" style="display: flex; gap: 10px;">
+                        <button class="details-btn" onclick="showCheMLDetails()">Details</button>
+                        <a href="https://github.com/mv-per/cheml" target="_blank" class="github-btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        .js-plotly-plot .plotly .modebar-btn {
-            display: flex;
-        }
+    <section id="resume">
 
-        .js-plotly-plot .plotly .modebar-btn svg {
-            position: static;
-        }
+        <div class="content-wrapper">
+            <div class="resume-section">
+                <h2 class="section-title">My Resume</h2>
+                <h3>🎯 Professional Summary</h3>
 
-        .js-plotly-plot {
-            box-sizing: content-box;
-        }
-    </style>
+                <p style="font-size: 1.1em; color: #555; margin-bottom: 25px;">
+                    <strong>Chemical Engineer</strong> with expertise in <span class="highlight-achievement">software
+                        development</span>,
+                    <span class="highlight-achievement">data analysis</span>, and <span
+                        class="highlight-achievement">automation</span>.
+                    Passionate about applying technology to solve complex engineering challenges and optimize industrial
+                    processes.
+                </p>
 
-    <script type="text/x-template" id="tpl-joystick"><div data-joystick><div></div></div></script>
-    <script type="text/x-template" id="tpl-plotly"><div data-plotly></div></script>
+                <h3>💼 Work Experience</h3>
 
+                <div style="margin-bottom: 25px;">
+                    <p><span class="company-name">Engineering Simulation and Scientific Software</span>
+                        <span class="date-range">(2021–2024)</span><br>
+                        <span class="job-title">Software Developer</span>
+                    </p>
+                    <ul>
+                        <li>Optimized SQL queries and caching strategies achieving a <span
+                                class="highlight-achievement">30%
+                                improvement</span> in backend response time</li>
+                        <li>Developed <span class="highlight-achievement">Angular components</span> for enhanced data
+                            management and
+                            user experience</li>
+                        <li>Built <span class="highlight-achievement">microservices infrastructure</span> to accelerate
+                            simulation
+                            workflows and boost scalability</li>
+                        <li>Implemented <span class="highlight-achievement">GitHub Actions CI/CD</span> for automated
+                            code
+                            validation and formatting</li>
+                        <li>Streamlined deployment processes, reducing release time by <span
+                                class="highlight-achievement">20%</span></li>
+                    </ul>
+                </div>
 
-    <div id="popup" aria-hidden="true">
-        <span>Connection lost.</span>
-        <span>Trying to reconnect...</span>
-    </div>
-    <script type="module">
-        const app = createApp(parseElements(String.raw`{"0":{"tag":"q-layout","class":["nicegui-layout"],"props":{"view":"hhh lpr fff"},"children":[1]},"1":{"tag":"q-page-container","children":[2]},"2":{"tag":"q-page","children":[3]},"3":{"tag":"div","class":["nicegui-content"],"children":[4,10,67,68]},"4":{"tag":"div","class":["nicegui-row","row","w-full","justify-center","nav-container"],"style":{"padding":"20px"},"children":[5,6,7,8,9]},"5":{"tag":"q-btn","props":{"color":"primary","label":"Welcome","flat":true},"events":[{"listener_id":"3a5f179f-adb4-43b8-9d9b-f49ab3eed856","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"6":{"tag":"q-btn","props":{"color":"primary","label":"About","flat":true},"events":[{"listener_id":"9406db5f-ec60-4b8f-8e07-637d348e2f15","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"7":{"tag":"q-btn","props":{"color":"primary","label":"Projects","flat":true},"events":[{"listener_id":"504d15e7-edfb-473f-ae47-b300425b26c1","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"8":{"tag":"q-btn","props":{"color":"primary","label":"Resume","flat":true},"events":[{"listener_id":"c103f33e-731e-4e0a-b52b-afcf98fbf6ef","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"9":{"tag":"q-btn","props":{"color":"primary","label":"Contact","flat":true},"events":[{"listener_id":"5bd3e9f8-a31c-4174-86d8-8c9e5e0e8f19","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"10":{"tag":"div","class":["portfolio-container"],"style":{"padding-top":"0"},"children":[11,19,44,60]},"11":{"tag":"div","class":["welcome-section"],"children":[12]},"12":{"tag":"div","class":["content-wrapper"],"children":[13,14,15,16]},"13":{"tag":"div","props":{"innerHTML":"&lt;h1 class=\"welcome-title\"&gt;Hello, I'm &lt;strong&gt;Marcus&lt;/strong&gt;&lt;/h1&gt;"}},"14":{"tag":"div","props":{"innerHTML":"&lt;p class=\"welcome-subtitle\"&gt;Hiker. Researcher. Developer.&lt;/p&gt;"}},"15":{"tag":"nicegui-image","class":["profile-pic"],"props":{"src":"/assets/images/profile.jpeg"},"component":{"key":"cb38ce54901f29431111814cbe1bb885/image.js","name":"image","tag":"nicegui-image"}},"16":{"tag":"div","class":["about-section"],"style":{"background":"rgba(255,255,255,0.95)","margin-top":"40px"},"children":[17,18]},"17":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\" style=\"color: #333;\"&gt;About Me&lt;/h2&gt;"}},"18":{"tag":"div","props":{"innerHTML":"\n                &lt;p&gt;My journey into &lt;span class=\"highlight\"&gt;problem-solving and automation&lt;/span&gt; began in 2014, during my time in scientific research. \n                It was there that I discovered the power of using &lt;span class=\"emphasis\"&gt;programming to streamline tasks&lt;/span&gt; and uncover insights.&lt;/p&gt;\n                \n                &lt;p&gt;Since then, I've been deeply passionate about using &lt;span class=\"highlight\"&gt;technology to improve efficiency&lt;/span&gt; and solve complex challenges. \n                What started as a curiosity has evolved into a versatile skill set that spans &lt;span class=\"emphasis\"&gt;automation, data analysis, and intuitive software development&lt;/span&gt;.&lt;/p&gt;\n                \n                &lt;p&gt;I've had the opportunity to work on diverse projects — from building &lt;span class=\"emphasis\"&gt;automation pipelines for scientific workflows&lt;/span&gt; \n                to crafting &lt;span class=\"emphasis\"&gt;user-friendly interfaces for data interaction&lt;/span&gt;. Each experience has strengthened both my technical and problem-solving capabilities.&lt;/p&gt;\n                \n                &lt;p&gt;I'm a firm believer in &lt;span class=\"highlight\"&gt;continuous learning&lt;/span&gt; and always strive to stay current with modern tools, languages, and development practices.&lt;/p&gt;\n                \n                &lt;p&gt;&lt;strong style=\"font-size: 1.2em; color: #667eea;\"&gt;Let's collaborate to turn challenging problems into elegant, impactful solutions.&lt;/strong&gt;&lt;/p&gt;\n                "}},"19":{"tag":"div","class":["content-wrapper"],"children":[20]},"20":{"tag":"div","class":["projects-section"],"children":[21,22,33]},"21":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\"&gt;My Selected (Open) Projects&lt;/h2&gt;"}},"22":{"tag":"div","class":["project-card"],"children":[23,26,29]},"23":{"tag":"div","class":["project-header"],"children":[24,25]},"24":{"tag":"div","props":{"innerHTML":"&lt;div style=\"font-size: 3em; margin-right: 15px;\"&gt;🎥&lt;/div&gt;"}},"25":{"tag":"div","props":{"innerHTML":"&lt;h3 style=\"margin: 0;\"&gt;TrackIT&lt;/h3&gt;"}},"26":{"tag":"div","class":["project-content"],"children":[27,28]},"27":{"tag":"div","props":{"innerHTML":"&lt;p&gt;Complete application for tracking objects in video using OpenCV with full-stack implementation.&lt;/p&gt;"}},"28":{"tag":"div","props":{"innerHTML":"&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Python, FastAPI, SQLAlchemy, Angular, PostgreSQL&lt;/p&gt;"}},"29":{"tag":"div","class":["project-footer"],"children":[30]},"30":{"tag":"div","class":["nicegui-row","row","gap-2"],"children":[31,32]},"31":{"tag":"q-btn","class":["details-btn"],"props":{"color":"primary","label":"Details"},"events":[{"listener_id":"819babde-2dfb-4ddd-9663-3af4051c1b96","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"32":{"tag":"nicegui-link","text":"View on GitHub","class":["nicegui-link","github-btn"],"props":{"href":"https://github.com/mv-per/TrackIt","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"33":{"tag":"div","class":["project-card"],"children":[34,37,40]},"34":{"tag":"div","class":["project-header"],"children":[35,36]},"35":{"tag":"div","props":{"innerHTML":"&lt;div style=\"font-size: 3em; margin-right: 15px;\"&gt;🧪&lt;/div&gt;"}},"36":{"tag":"div","props":{"innerHTML":"&lt;h3 style=\"margin: 0;\"&gt;CheML&lt;/h3&gt;"}},"37":{"tag":"div","class":["project-content"],"children":[38,39]},"38":{"tag":"div","props":{"innerHTML":"&lt;p&gt;Comprehensive Python toolkit for machine learning in Chemical Engineering with production-ready features.&lt;/p&gt;"}},"39":{"tag":"div","props":{"innerHTML":"&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Python, scikit-learn, FastAPI, MLflow, Conda&lt;/p&gt;"}},"40":{"tag":"div","class":["project-footer"],"children":[41]},"41":{"tag":"div","class":["nicegui-row","row","gap-2"],"children":[42,43]},"42":{"tag":"q-btn","class":["details-btn"],"props":{"color":"primary","label":"Details"},"events":[{"listener_id":"c095867b-aec0-4153-8935-a4198bfe8cd7","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"43":{"tag":"nicegui-link","text":"View on GitHub","class":["nicegui-link","github-btn"],"props":{"href":"https://github.com/mv-per/cheml","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"44":{"tag":"div","class":["content-wrapper"],"children":[45]},"45":{"tag":"div","class":["resume-section"],"children":[46,47,48,49,50,51,52,53,54,55,56,57,58,59]},"46":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\"&gt;My Resume&lt;/h2&gt;"}},"47":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🎯 Professional Summary&lt;/h3&gt;"}},"48":{"tag":"div","props":{"innerHTML":"\n                &lt;p style=\"font-size: 1.1em; color: #555; margin-bottom: 25px;\"&gt;\n                    &lt;strong&gt;Chemical Engineer&lt;/strong&gt; with expertise in &lt;span class=\"highlight-achievement\"&gt;software development&lt;/span&gt;, \n                    &lt;span class=\"highlight-achievement\"&gt;data analysis&lt;/span&gt;, and &lt;span class=\"highlight-achievement\"&gt;automation&lt;/span&gt;. \n                    Passionate about applying technology to solve complex engineering challenges and optimize industrial processes.\n                &lt;/p&gt;\n            "}},"49":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;💼 Work Experience&lt;/h3&gt;"}},"50":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"margin-bottom: 25px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"company-name\"&gt;Engineering Simulation and Scientific Software&lt;/span&gt; \n                    &lt;span class=\"date-range\"&gt;(2021–2024)&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"job-title\"&gt;Software Developer&lt;/span&gt;&lt;/p&gt;\n                    &lt;ul&gt;\n                        &lt;li&gt;Optimized SQL queries and caching strategies achieving a &lt;span class=\"highlight-achievement\"&gt;30% improvement&lt;/span&gt; in backend response time&lt;/li&gt;\n                        &lt;li&gt;Developed &lt;span class=\"highlight-achievement\"&gt;Angular components&lt;/span&gt; for enhanced data management and user experience&lt;/li&gt;\n                        &lt;li&gt;Built &lt;span class=\"highlight-achievement\"&gt;microservices infrastructure&lt;/span&gt; to accelerate simulation workflows and boost scalability&lt;/li&gt;\n                        &lt;li&gt;Implemented &lt;span class=\"highlight-achievement\"&gt;GitHub Actions CI/CD&lt;/span&gt; for automated code validation and formatting&lt;/li&gt;\n                        &lt;li&gt;Streamlined deployment processes, reducing release time by &lt;span class=\"highlight-achievement\"&gt;20%&lt;/span&gt;&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 25px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"company-name\"&gt;Laboratory of Adsorption and Ion Exchange&lt;/span&gt; \n                    &lt;span class=\"date-range\"&gt;(2018–2021)&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"job-title\"&gt;Junior Researcher&lt;/span&gt; | &lt;em&gt;Brazil&lt;/em&gt;&lt;/p&gt;\n                    &lt;ul&gt;\n                        &lt;li&gt;Led training programs for &lt;span class=\"highlight-achievement\"&gt;15+ students and interns&lt;/span&gt; on lab and field research methodologies&lt;/li&gt;\n                        &lt;li&gt;Designed and operated &lt;span class=\"highlight-achievement\"&gt;high-pressure adsorption systems&lt;/span&gt; for gas separation research&lt;/li&gt;\n                        &lt;li&gt;Automated data acquisition systems improving research workflow &lt;span class=\"highlight-achievement\"&gt;efficiency by 40%&lt;/span&gt;&lt;/li&gt;\n                        &lt;li&gt;Developed &lt;span class=\"highlight-achievement\"&gt;multicomponent adsorption algorithms&lt;/span&gt; in Python and C/C++&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;\n            "}},"51":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🎓 Education&lt;/h3&gt;"}},"52":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;Ph.D. in Chemical Engineering&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;Louisiana State University, USA&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2024–Present)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Focus: Machine Learning for Sustainable Chemical Manufacturing&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;M.Sc. in Chemical Engineering&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;State University of Maringá, Brazil&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2016–2019)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Focus: Adsorption modeling using Potential Theory&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;B.Tech. in Chemical Processes&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;Federal University of Technology, Brazil&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2011–2016)&lt;/span&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"degree\"&gt;Academic Exchange Program&lt;/span&gt;&lt;br&gt;\n                    &lt;span class=\"institution\"&gt;University of Nevada, Reno, USA&lt;/span&gt; &lt;span class=\"date-range\"&gt;(2014–2015)&lt;/span&gt;&lt;/p&gt;\n                &lt;/div&gt;\n            "}},"53":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🔧 Technical Skills&lt;/h3&gt;"}},"54":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 25px;\"&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Programming Languages:&lt;/strong&gt;&lt;br&gt;\n                        Python, TypeScript, JavaScript, C/C++, MATLAB&lt;/p&gt;\n                    &lt;/div&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Web Technologies:&lt;/strong&gt;&lt;br&gt;\n                        Angular, HTML/CSS, NiceGUI, REST APIs&lt;/p&gt;\n                    &lt;/div&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Data &amp; Analytics:&lt;/strong&gt;&lt;br&gt;\n                        SQL, Data Analysis, Machine Learning, Automation&lt;/p&gt;\n                    &lt;/div&gt;\n                    &lt;div&gt;\n                        &lt;p&gt;&lt;strong style=\"color: #667eea;\"&gt;Tools &amp; Platforms:&lt;/strong&gt;&lt;br&gt;\n                        Git, GitHub Actions, Docker, Microservices, MLFlow&lt;/p&gt;\n                    &lt;/div&gt;\n                &lt;/div&gt;\n            "}},"55":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;🔬 Research Experience&lt;/h3&gt;"}},"56":{"tag":"div","props":{"innerHTML":"\n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"institution\"&gt;State University of Maringá, Brazil&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Multicomponent adsorption modeling using Potential Theory on zeolites and activated carbon for gas separation applications&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n                \n                &lt;div style=\"margin-bottom: 20px;\"&gt;\n                    &lt;p&gt;&lt;span class=\"institution\"&gt;University of Nevada, Reno, USA&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;Hydrodeoxygenation of biocrude and catalytic biomass conversion for sustainable biofuel production&lt;/em&gt;&lt;/p&gt;\n                &lt;/div&gt;\n            "}},"57":{"tag":"div","props":{"innerHTML":"&lt;h3&gt;📚 Selected Publications&lt;/h3&gt;"}},"58":{"tag":"div","props":{"innerHTML":"\n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Separation and Purification Technology&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2025)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"CO₂ adsorption in NaY zeolite beds: Modeling and optimization\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Adsorption&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2023)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"Simulation of sour gas adsorption using multicomponent theory\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Journal of CO₂ Utilization&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2023)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"Zeolite regeneration for cyclic CO₂ capture applications\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Chemical Engineering Science&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2022)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"Confined fluid isotherms with PCP-SAFT DFT modeling\"&lt;/em&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"publication-item\"&gt;\n                    &lt;span class=\"publication-journal\"&gt;Microporous and Mesoporous Materials&lt;/span&gt; \n                    &lt;span class=\"publication-year\"&gt;(2019)&lt;/span&gt;&lt;br&gt;\n                    &lt;em&gt;\"H₂S adsorption on NaY zeolite: Experimental and theoretical analysis\"&lt;/em&gt;\n                &lt;/div&gt;\n            "}},"59":{"tag":"div","props":{"innerHTML":"&lt;br&gt;"}},"60":{"tag":"div","class":["content-wrapper"],"children":[61]},"61":{"tag":"div","class":["contact-section","resume-section"],"children":[62,63]},"62":{"tag":"div","props":{"innerHTML":"&lt;h2 class=\"section-title\"&gt;Contact Information&lt;/h2&gt;"}},"63":{"tag":"div","class":["nicegui-row","row","justify-center","gap-4"],"style":{"margin-top":"30px"},"children":[64,65,66]},"64":{"tag":"nicegui-link","text":"📧 Email","class":["nicegui-link","details-btn"],"style":{"background":"var(--gradient-primary)","color":"white","text-decoration":"none"},"props":{"href":"mailto:mav.pereira@outlook.com","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"65":{"tag":"nicegui-link","text":"💼 LinkedIn","class":["nicegui-link","github-btn"],"style":{"background":"#0077b5","color":"white","text-decoration":"none"},"props":{"href":"https://linkedin.com/in/marcusvpereira","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"66":{"tag":"nicegui-link","text":"🎓 ORCID","class":["nicegui-link","github-btn"],"style":{"background":"#a6ce39","color":"white","text-decoration":"none"},"props":{"href":"https://orcid.org/0000-0003-2405-5308","target":"_blank"},"component":{"key":"abe36db14a9767a6468458f1d6440311/link.js","name":"link","tag":"nicegui-link"}},"67":{"tag":"q-btn","class":["back-to-top"],"props":{"color":"primary","label":"↑","fab":true},"events":[{"listener_id":"366f0da6-dd64-4ecf-9c56-0813b8f22c0b","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]},"68":{"tag":"q-btn","style":{"position":"fixed","top":"10px","right":"10px","z-index":"1000"},"props":{"color":"primary","label":"Save Portfolio"},"events":[{"listener_id":"ee773c5e-c968-4495-8230-9bb08c21b92c","type":"click","specials":[],"modifiers":[],"keys":[],"args":[],"throttle":0.0,"leading_events":true,"trailing_events":true,"js_handler":null}]}}`), {
-            version: "2.19.0.dev0",
-            prefix: "",
-            query: { 'client_id': '5374cd24-e118-4a1f-ad5c-c413e96e6e96', 'next_message_id': 0 },
-            extraHeaders: {},
-            transports: ['websocket', 'polling'],
-            quasarConfig: { "brand": { "primary": "#5898d4" }, "loadingBar": { "color": "primary", "skipHijack": false } },
-        });
+                <div style="margin-bottom: 25px;">
+                    <p><span class="company-name">Laboratory of Adsorption and Ion Exchange</span>
+                        <span class="date-range">(2018–2021)</span><br>
+                        <span class="job-title">Junior Researcher</span> | <em>Brazil</em>
+                    </p>
+                    <ul>
+                        <li>Led training programs for <span class="highlight-achievement">15+ students and
+                                interns</span> on
+                            lab and
+                            field research methodologies</li>
+                        <li>Designed and operated <span class="highlight-achievement">high-pressure adsorption
+                                systems</span> for
+                            gas separation research</li>
+                        <li>Automated data acquisition systems improving research workflow <span
+                                class="highlight-achievement">efficiency by 40%</span></li>
+                        <li>Developed <span class="highlight-achievement">multicomponent adsorption algorithms</span> in
+                            Python and
+                            C/C++</li>
+                    </ul>
+                </div>
 
-        import { default as image } from "/_nicegui/2.19.0.dev0/components/cb38ce54901f29431111814cbe1bb885/image.js";
-        app.component("nicegui-image", image);
-        import { default as link } from "/_nicegui/2.19.0.dev0/components/abe36db14a9767a6468458f1d6440311/link.js";
-        app.component("nicegui-link", link);
-        var joystick = app.component('nicegui-joystick', {
-            template: '#tpl-joystick',
-            async mounted() {
-                await import("nipplejs");
-                const joystick = nipplejs.create({
-                    zone: this.$el.children[0],
-                    position: { left: "50%", top: "50%" },
-                    dynamicPage: true,
-                    ...this.options,
-                });
-                joystick.on("start", (e) => this.$emit("start", e));
-                joystick.on("move", (_, data) => this.$emit("move", { data }));
-                joystick.on("end", (e) => this.$emit("end", e));
-            },
-            props: {
-                options: Object,
-            },
-        });
-        var plotly = app.component('nicegui-plotly', {
-            template: '#tpl-plotly',
-            async mounted() {
-                await import("plotly");
-                this.update();
-            },
-            methods: {
-                update() {
-                    // wait for plotly to be loaded
-                    if (typeof Plotly === "undefined") {
-                        setTimeout(this.update, 10);
-                        return;
-                    }
+                <h3>🎓 Education</h3>
 
-                    // default responsive to true
-                    const options = this.options;
-                    if (options.config === undefined) options.config = { responsive: true };
-                    if (options.config.responsive === undefined) options.config.responsive = true;
+                <div style="margin-bottom: 20px;">
+                    <p><span class="degree">Ph.D. in Chemical Engineering</span><br>
+                        <span class="institution">Louisiana State University, USA</span> <span
+                            class="date-range">(2024–Present)</span><br>
+                        <em>Focus: Machine Learning for Sustainable Chemical Manufacturing</em>
+                    </p>
+                </div>
 
-                    // re-use plotly instance if config is the same
-                    if (JSON.stringify(options.config) == JSON.stringify(this.last_options.config)) {
-                        Plotly.react(this.$el.id, this.options.data, this.options.layout);
-                    } else {
-                        Plotly.newPlot(this.$el.id, this.options.data, this.options.layout, options.config);
-                        this.set_handlers();
-                    }
+                <div style="margin-bottom: 20px;">
+                    <p><span class="degree">M.Sc. in Chemical Engineering</span><br>
+                        <span class="institution">State University of Maringá, Brazil</span> <span
+                            class="date-range">(2016–2019)</span><br>
+                        <em>Focus: Adsorption modeling using Potential Theory</em>
+                    </p>
+                </div>
 
-                    // store last options
-                    this.last_options = options;
-                },
-                set_handlers() {
-                    // forward events
-                    for (const name of [
-                        // source: https://plotly.com/javascript/plotlyjs-events/
-                        "plotly_click",
-                        "plotly_legendclick",
-                        "plotly_selecting",
-                        "plotly_selected",
-                        "plotly_hover",
-                        "plotly_unhover",
-                        "plotly_legenddoubleclick",
-                        "plotly_restyle",
-                        "plotly_relayout",
-                        "plotly_webglcontextlost",
-                        "plotly_afterplot",
-                        "plotly_autosize",
-                        "plotly_deselect",
-                        "plotly_doubleclick",
-                        "plotly_redraw",
-                        "plotly_animated",
-                    ]) {
-                        this.$el.on(name, (event) => {
-                            const args = {
-                                ...event,
-                                points: event?.points?.map((p) => ({
-                                    ...p,
-                                    fullData: undefined,
-                                    xaxis: undefined,
-                                    yaxis: undefined,
-                                })),
-                                xaxes: undefined,
-                                yaxes: undefined,
-                            };
-                            this.$emit(name, args);
-                        });
-                    }
-                },
-            },
-            data() {
-                return {
-                    last_options: {},
-                };
-            },
-            props: {
-                options: Object,
-            },
-        });
+                <div style="margin-bottom: 20px;">
+                    <p><span class="degree">B.Tech. in Chemical Processes</span><br>
+                        <span class="institution">Federal University of Technology, Brazil</span> <span
+                            class="date-range">(2011–2016)</span>
+                    </p>
+                </div>
 
-        const dark = false;
-        Quasar.lang.set(Quasar.lang["en-US".replace('-', '')]);
-        Quasar.Dark.set(dark === None ? "auto" : dark);
+                <div style="margin-bottom: 20px;">
+                    <p><span class="degree">Academic Exchange Program</span><br>
+                        <span class="institution">University of Nevada, Reno, USA</span> <span
+                            class="date-range">(2014–2015)</span>
+                    </p>
+                </div>
 
-        if (dark !== None) tailwind.config.darkMode = "class";
+                <h3>🔧 Technical Skills</h3>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                    <div>
+                        <p><strong style="color: #667eea;">Programming Languages:</strong><br>
+                            Python, TypeScript, JavaScript, C/C++, MATLAB</p>
+                    </div>
+                    <div>
+                        <p><strong style="color: #667eea;">Web Technologies:</strong><br>
+                            Angular, HTML/CSS, NiceGUI, REST APIs</p>
+                    </div>
+                    <div>
+                        <p><strong style="color: #667eea;">Data & Analytics:</strong><br>
+                            SQL, Data Analysis, Machine Learning, Automation</p>
+                    </div>
+                    <div>
+                        <p><strong style="color: #667eea;">Tools & Platforms:</strong><br>
+                            Git, GitHub Actions, Docker, Microservices, MLFlow</p>
+                    </div>
+                </div>
 
-        if (dark === True) document.body.classList.add("dark");
+                <h3>🔬 Research Experience</h3>
 
+                <div style="margin-bottom: 20px;">
+                    <p><span class="institution">State University of Maringá, Brazil</span><br>
+                        <em>Multicomponent adsorption modeling using Potential Theory on zeolites and activated carbon
+                            for
+                            gas
+                            separation applications</em>
+                    </p>
+                </div>
 
-        app.mount("#app");
-    </script>
+                <div style="margin-bottom: 20px;">
+                    <p><span class="institution">University of Nevada, Reno, USA</span><br>
+                        <em>Hydrodeoxygenation of biocrude and catalytic biomass conversion for sustainable biofuel
+                            production</em>
+                    </p>
+                </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Smooth scroll functionality
-            function smoothScrollTo(selector) {
-                const element = document.querySelector(selector);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                    console.warn(`Element with selector "${selector}" not found.`);
-                }
-            }
+                <h3>📚 Selected Publications</h3>
 
-            // Back to top functionality
-            function scrollToTop() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
+                <div class="publication-card">
+                    <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
+                        <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Separation and Purification Technology</h3>
+                    </div>
+                    <div class="publication-content">
+                        <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
+                            <em>"Comparison of upward and downward flow in high-pressure bulk CO₂ gas adsorption on NaY zeolite fixed bed"</em>
+                        </p>
+                        <p style="margin: 10px 0; font-size: 1em; color: var(--text-light);">
+                            <strong>Authors:</strong> Moretti, A. L., Pereira, M. V., Diório, A., et al. <br>
+                            <strong>Year:</strong> 2025
+                        </p>
+                    </div>
+                    <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
+                        <a href="https://doi.org/10.1016/j.seppur.2025.129896" target="_blank" class="details-btn">View DOI</a>
+                    </div>
+                </div>
 
-            // Re-attach event listeners for navigation buttons
-            document.querySelectorAll('button').forEach(btn => {
-                const text = btn.textContent.trim();
-                if (text === 'Welcome') {
-                    btn.onclick = () => smoothScrollTo('.welcome-section');
-                } else if (text === 'About') {
-                    btn.onclick = () => smoothScrollTo('.about-section');
-                } else if (text === 'Projects') {
-                    btn.onclick = () => smoothScrollTo('.projects-section');
-                } else if (text === 'Resume') {
-                    btn.onclick = () => smoothScrollTo('.resume-section');
-                } else if (text === 'Contact') {
-                    btn.onclick = () => smoothScrollTo('.contact-section');
-                } else if (text === '↑') {
-                    btn.onclick = scrollToTop;
-                } else if (text === 'Details') {
-                    // Keep existing modal functionality
-                    // This will need to be handled separately
-                }
-            });
+                <div class="publication-card">
+                    <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
+                        <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Adsorption</h3>
+                    </div>
+                    <div class="publication-content">
+                        <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
+                            <em>"Simulation of high-pressure sour natural gas adsorption equilibrium on NaX and NaY zeolites using the multicomponent potential theory of adsorption"</em>
+                        </p>
+                        <p style="margin: 10px 0; font-size: 1em; color: var(--text-light);">
+                            <strong>Authors:</strong> Pereira, M.V., de Oliveira, L.H., do Nascimento, J.F., et al. <br>
+                            <strong>Year:</strong> 2023
+                        </p>
+                    </div>
+                    <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
+                        <a href="https://doi.org/10.1007/s10450-022-00373-9" target="_blank" class="details-btn">View DOI</a>
+                    </div>
+                </div>
 
-            // Show/hide back to top button
-            window.addEventListener('scroll', function () {
-                const backToTopBtn = document.querySelector('.back-to-top');
-                if (backToTopBtn) {
-                    if (window.pageYOffset > 300) {
-                        backToTopBtn.classList.add('show');
-                    } else {
-                        backToTopBtn.classList.remove('show');
-                    }
-                }
-            });
+                <div class="publication-card">
+                    <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
+                        <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Journal of CO₂ Utilization</h3>
+                    </div>
+                    <div class="publication-content">
+                        <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
+                            <em>"Influence of regeneration conditions on cyclic CO₂ adsorption on NaA zeolite at high pressures"</em>
+                        </p>
+                        <p style="margin: 10px 0; font-size: 1em; color: var(--text-light);">
+                            <strong>Authors:</strong> Pereira, M.V., de Oliveira, L.H., do Nascimento, J.F., et al. <br>
+                            <strong>Year:</strong> 2023
+                        </p>
+                    </div>
+                    <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
+                        <a href="https://doi.org/10.1016/j.jcou.2022.102296" target="_blank" class="details-btn">View DOI</a>
+                    </div>
+                </div>
 
-            // Handle GitHub links
-            document.querySelectorAll('a[href*="github.com"]').forEach(link => {
-                link.target = '_blank';
-                link.rel = 'noopener noreferrer';
-            });
+                <div class="publication-card">
+                    <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
+                        <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Chemical Engineering Science</h3>
+                    </div>
+                    <div class="publication-content">
+                        <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
+                            <em>"PCP-SAFT Density Functional Theory as a much-improved approach to obtain confined fluid isotherm data applied to sub and supercritical conditions"</em>
+                        </p>
+                        <p style="margin: 10px 0; font-size: 1em; color: var(--text-light);">
+                            <strong>Authors:</strong> Pereira, M.V., et al. <br>
+                            <strong>Year:</strong> 2022
+                        </p>
+                    </div>
+                    <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
+                        <a href="https://doi.org/10.1016/j.ces.2021.116905" target="_blank" class="details-btn">View DOI</a>
+                    </div>
+                </div>
 
-            // Handle email and other external links
-            document.querySelectorAll('a[href^="mailto:"], a[href^="https://linkedin.com"], a[href^="https://orcid.org"]').forEach(link => {
-                link.target = '_blank';
-                link.rel = 'noopener noreferrer';
-            });
-        });
-    </script>
+                <div class="publication-card">
+                    <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
+                        <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Fluid Phase Equilibria</h3>
+                    </div>
+                    <div class="publication-content">
+                        <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
+                            <em>"Parametric Analysis of Two-dimensional Equation of State used to Predict High Pressure CO₂ and CH₄ on NaY zeolite and babassu activated carbon"</em>
+                        </p>
+                        <p style="margin: 10px 0; font-size: 1em; color: var(--text-light);">
+                            <strong>Authors:</strong> Pereira, M.V., et al. <br>
+                            <strong>Year:</strong> 2021
+                        </p>
+                    </div>
+                    <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
+                        <a href="https://doi.org/10.1016/j.fluid.2021.113031" target="_blank" class="details-btn">View DOI</a>
+                    </div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
+                        <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Microporous and Mesoporous Materials</h3>
+                    </div>
+                    <div class="publication-content">
+                        <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
+                            <em>"H₂S adsorption on NaY zeolite"</em>
+                        </p>
+                        <p style="margin: 10px 0; font-size: 1em; color: var(--text-light);">
+                            <strong>Authors:</strong> Pereira, M.V., et al. <br>
+                            <strong>Year:</strong> 2019
+                        </p>
+                    </div>
+                    <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
+                        <a href="https://doi.org/10.1016/j.micromeso.2019.04.014" target="_blank" class="details-btn">View DOI</a>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact">
+        <div class="content-wrapper">
+            <div class="resume-section">
+                <h2 class="section-title">Contact Information</h2>
+
+                <div style="display: flex; justify-content: center; gap: 16px; margin-top: 30px;">
+                    <a href="mailto:mav.pereira@outlook.com" target="_blank" class="details-btn"
+                        style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 500;">
+                        📧 Email
+                    </a>
+                    <a href="https://linkedin.com/in/marcusvpereira" target="_blank" class="github-btn"
+                        style="background: #0077b5; color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 500;">
+                        💼 LinkedIn
+                    </a>
+                    <a href="https://orcid.org/0000-0003-2405-5308" target="_blank" class="github-btn"
+                        style="background: #a6ce39; color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 500;">
+                        🎓 ORCID
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
 </body>
 
 </html>
