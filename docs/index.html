@@ -11,8 +11,20 @@
 </head>
 
 <body style="padding: 0%; margin:0%;">
-    <nav class="nav-container"
-        style="padding: 5px; background-color: #333; display: flex; justify-content: center; gap: 20px; position: sticky; top: 0; z-index: 1000;">
+    <nav class="nav-container" style="
+            padding: 12px 0;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(60, 60, 120, 0.08);
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+        ">
         <button onclick="document.getElementById('welcome').scrollIntoView({behavior: 'smooth'});"
             style="background: none; border: none; font-size: 1em; cursor: pointer;">Welcome</button>
         <button onclick="document.querySelector('.about-section').scrollIntoView({behavior: 'smooth'});"
@@ -25,11 +37,21 @@
             style="background: none; border: none; font-size: 1em; cursor: pointer;">Contact</button>
 
         <!-- Icons for mobile view -->
-        <span class="nav-icon" onclick="document.getElementById('welcome').scrollIntoView({behavior: 'smooth'});">🏠</span>
-        <span class="nav-icon" onclick="document.querySelector('.about-section').scrollIntoView({behavior: 'smooth'});">👤</span>
-        <span class="nav-icon" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'});">📂</span>
-        <span class="nav-icon" onclick="document.getElementById('resume').scrollIntoView({behavior: 'smooth'});">📄</span>
-        <span class="nav-icon" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">📧</span>
+        <span class="nav-icon" onclick="document.getElementById('welcome').scrollIntoView({behavior: 'smooth'});">
+            <img src="./assets/images/welcome.svg" alt="Welcome Icon" style="width: 24px; height: 24px;">
+        </span>
+        <span class="nav-icon" onclick="document.querySelector('.about-section').scrollIntoView({behavior: 'smooth'});">
+            <img src="./assets/images/about.svg" alt="About Icon" style="width: 24px; height: 24px;">
+        </span>
+        <span class="nav-icon" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'});">
+            <img src="./assets/images/projects.svg" alt="Projects Icon" style="width: 24px; height: 24px;">
+        </span>
+        <span class="nav-icon" onclick="document.getElementById('resume').scrollIntoView({behavior: 'smooth'});">
+            <img src="./assets/images/resume.svg" alt="Resume Icon" style="width: 24px; height: 24px;">
+        </span>
+        <span class="nav-icon" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">
+            <img src="./assets/images/contact.svg" alt="Contact Icon" style="width: 24px; height: 24px;">
+        </span>
     </nav>
 
     <section id="welcome">
@@ -260,11 +282,13 @@
                 <div class="publication-card">
                     <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
                         <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
-                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Separation and Purification Technology</h3>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">
+                            Separation and Purification Technology</h3>
                     </div>
                     <div class="publication-content">
                         <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
-                            <em>"Comparison of upward and downward flow in high-pressure bulk CO₂ gas adsorption on NaY zeolite fixed bed"</em>
+                            <em>"Comparison of upward and downward flow in high-pressure bulk CO₂ gas adsorption on NaY
+                                zeolite fixed bed"</em>
                         </p>
                         <p style="margin: 10px 0; font-size: 1em; color: var(--text-light);">
                             <strong>Authors:</strong> Moretti, A. L., Pereira, M. V., Diório, A., et al. <br>
@@ -272,18 +296,21 @@
                         </p>
                     </div>
                     <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
-                        <a href="https://doi.org/10.1016/j.seppur.2025.129896" target="_blank" class="details-btn">View DOI</a>
+                        <a href="https://doi.org/10.1016/j.seppur.2025.129896" target="_blank" class="details-btn">View
+                            DOI</a>
                     </div>
                 </div>
 
                 <div class="publication-card">
                     <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
                         <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
-                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Adsorption</h3>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">
+                            Adsorption</h3>
                     </div>
                     <div class="publication-content">
                         <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
-                            <em>"Simulation of high-pressure sour natural gas adsorption equilibrium on NaX and NaY zeolites using the multicomponent potential theory of adsorption"</em>
+                            <em>"Simulation of high-pressure sour natural gas adsorption equilibrium on NaX and NaY
+                                zeolites using the multicomponent potential theory of adsorption"</em>
                         </p>
                         <p style="margin: 10px 0; font-size: 1em; color: var(--text-light);">
                             <strong>Authors:</strong> Pereira, M.V., de Oliveira, L.H., do Nascimento, J.F., et al. <br>
@@ -291,18 +318,21 @@
                         </p>
                     </div>
                     <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
-                        <a href="https://doi.org/10.1007/s10450-022-00373-9" target="_blank" class="details-btn">View DOI</a>
+                        <a href="https://doi.org/10.1007/s10450-022-00373-9" target="_blank" class="details-btn">View
+                            DOI</a>
                     </div>
                 </div>
 
                 <div class="publication-card">
                     <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
                         <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
-                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Journal of CO₂ Utilization</h3>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Journal
+                            of CO₂ Utilization</h3>
                     </div>
                     <div class="publication-content">
                         <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
-                            <em>"Influence of regeneration conditions on cyclic CO₂ adsorption on NaA zeolite at high pressures"</em>
+                            <em>"Influence of regeneration conditions on cyclic CO₂ adsorption on NaA zeolite at high
+                                pressures"</em>
                         </p>
                         <p style="margin: 10px 0; font-size: 1em; color: var(--text-light);">
                             <strong>Authors:</strong> Pereira, M.V., de Oliveira, L.H., do Nascimento, J.F., et al. <br>
@@ -310,18 +340,21 @@
                         </p>
                     </div>
                     <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
-                        <a href="https://doi.org/10.1016/j.jcou.2022.102296" target="_blank" class="details-btn">View DOI</a>
+                        <a href="https://doi.org/10.1016/j.jcou.2022.102296" target="_blank" class="details-btn">View
+                            DOI</a>
                     </div>
                 </div>
 
                 <div class="publication-card">
                     <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
                         <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
-                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Chemical Engineering Science</h3>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Chemical
+                            Engineering Science</h3>
                     </div>
                     <div class="publication-content">
                         <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
-                            <em>"PCP-SAFT Density Functional Theory as a much-improved approach to obtain confined fluid isotherm data applied to sub and supercritical conditions"</em>
+                            <em>"PCP-SAFT Density Functional Theory as a much-improved approach to obtain confined fluid
+                                isotherm data applied to sub and supercritical conditions"</em>
                         </p>
                         <p style="margin: 10px 0; font-size: 1em; color: var(--text-light);">
                             <strong>Authors:</strong> Pereira, M.V., et al. <br>
@@ -329,18 +362,21 @@
                         </p>
                     </div>
                     <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
-                        <a href="https://doi.org/10.1016/j.ces.2021.116905" target="_blank" class="details-btn">View DOI</a>
+                        <a href="https://doi.org/10.1016/j.ces.2021.116905" target="_blank" class="details-btn">View
+                            DOI</a>
                     </div>
                 </div>
 
                 <div class="publication-card">
                     <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
                         <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
-                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Fluid Phase Equilibria</h3>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Fluid
+                            Phase Equilibria</h3>
                     </div>
                     <div class="publication-content">
                         <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
-                            <em>"Parametric Analysis of Two-dimensional Equation of State used to Predict High Pressure CO₂ and CH₄ on NaY zeolite and babassu activated carbon"</em>
+                            <em>"Parametric Analysis of Two-dimensional Equation of State used to Predict High Pressure
+                                CO₂ and CH₄ on NaY zeolite and babassu activated carbon"</em>
                         </p>
                         <p style="margin: 10px 0; font-size: 1em; color: var(--text-light);">
                             <strong>Authors:</strong> Pereira, M.V., et al. <br>
@@ -348,14 +384,16 @@
                         </p>
                     </div>
                     <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
-                        <a href="https://doi.org/10.1016/j.fluid.2021.113031" target="_blank" class="details-btn">View DOI</a>
+                        <a href="https://doi.org/10.1016/j.fluid.2021.113031" target="_blank" class="details-btn">View
+                            DOI</a>
                     </div>
                 </div>
 
                 <div class="publication-card">
                     <div class="publication-header" style="display: flex; align-items: center; gap: 15px;">
                         <div style="font-size: 2.5em; color: var(--primary-color);">📄</div>
-                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">Microporous and Mesoporous Materials</h3>
+                        <h3 style="margin: 0; font-size: 1.6em; color: var(--text-primary); font-weight: 600;">
+                            Microporous and Mesoporous Materials</h3>
                     </div>
                     <div class="publication-content">
                         <p style="margin: 0; font-size: 1.1em; line-height: 1.6; color: var(--text-secondary);">
@@ -367,7 +405,8 @@
                         </p>
                     </div>
                     <div class="publication-footer" style="display: flex; gap: 10px; margin-top: 15px;">
-                        <a href="https://doi.org/10.1016/j.micromeso.2019.04.014" target="_blank" class="details-btn">View DOI</a>
+                        <a href="https://doi.org/10.1016/j.micromeso.2019.04.014" target="_blank"
+                            class="details-btn">View DOI</a>
                     </div>
                 </div>
                 <br>

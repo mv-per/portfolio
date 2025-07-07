@@ -55,7 +55,7 @@
     text-align: center;
     padding: 80px 20px;
     /* Reduced padding */
-    margin: 0 auto;
+    margin: -30px auto;
     /* Center the section */
     width: 100%;
     /* Ensure it uses only 100% width */
@@ -577,32 +577,21 @@
 
 /* Navigation Styles */
 .nav-container .nav-icon {
-    display: none;
-    /* Hide icons by default */
+    display: inline-block;
+    font-size: 1.5em;
+    /* Adjust icon size */
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-/* Show icons only in mobile view */
-@media (max-width: 768px) {
-    .nav-container .nav-icon {
-        display: inline-block;
-        /* Show icons on mobile */
-        font-size: 1.5em;
-        /* Adjust icon size */
-        color: var(--text-secondary);
-        cursor: pointer;
-        transition: var(--transition);
-    }
-
-    .nav-container .nav-icon:hover {
-        color: var(--primary-color);
-        transform: scale(1.1);
-        /* Slight hover effect */
-    }
-
-    .nav-container button {
-        display: none;
-        /* Hide text buttons on mobile */
-    }
+.nav-container .nav-icon:hover {
+    color: var(--primary-color);
+    /* Change color on hover */
+    transform: scale(1.2);
+    /* Slightly enlarge the icon */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    /* Add subtle shadow */
 }
 
 /* Back to top button */
@@ -733,8 +722,10 @@
 
     .nav-container .nav-icon:hover {
         color: var(--primary-color);
-        transform: scale(1.1);
-        /* Slight hover effect */
+        transform: scale(1.2);
+        /* Slightly enlarge the icon */
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        /* Add subtle shadow */
     }
 
     .resume-section h3 {
