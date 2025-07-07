@@ -911,6 +911,75 @@ def main():
     # Add a "Back to Top" button
     ui.button('↑', on_click=lambda: ui.run_javascript('window.scrollTo({top: 0, behavior: "smooth"});')).props('fab').classes('back-to-top')
 
+async def save():
+    # Only save if there's a specific client context
+    try:
+        from nicegui import context
+        if hasattr(context, 'client') and context.client:
+            html = await context.client.run_javascript("document.querySelector('html').outerHTML")
+            with open("./index.html", "w", encoding="utf-8") as file:
+                file.write(html)
+            print("Portfolio saved successfully!")
+        else:
+            create_basic_html_structure()
+    except Exception as e:
+        print(f"Could not save HTML from client: {e}")
+        create_basic_html_structure()
+
+def create_basic_html_structure():
+    """Create a basic HTML structure when client context is not available"""
+    basic_html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus - Portfolio</title>
+    <style>
+        /* Add your CSS styles here */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #333; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Marcus - Portfolio</h1>
+        <p>This is a basic HTML structure. Please visit the live site for the full experience.</p>
+        <p>Live site: <a href="http://localhost:8081">http://localhost:8081</a></p>
+    </div>
+</body>
+</html>"""
+    
+    with open("./index.html", "w", encoding="utf-8") as file:
+        file.write(basic_html)
+    print("Created basic HTML structure...")
+
+# Alternative approach: Use a button-triggered save instead of timer
+def save_on_demand():
+    async def do_save():
+        try:
+            from nicegui import context
+            # Check if we have a valid client context and it's not the auto-index page
+            if hasattr(context, 'client') and context.client and hasattr(context.client, 'id'):
+                html = await context.client.run_javascript("document.querySelector('html').outerHTML")
+                with open("./index.html", "w", encoding="utf-8") as file:
+                    file.write(html)
+                ui.notify("Portfolio saved as index.html", type='positive')
+            else:
+                create_basic_html_structure()
+                ui.notify("Created basic HTML structure", type='warning')
+        except Exception as e:
+            create_basic_html_structure()
+            ui.notify(f"Error saving: {e}", type='negative')
+    return do_save
+
 if __name__ in {"__main__", "__mp_main__"}:
-    main()
+    # Create a specific page instead of using auto-index
+    @ui.page('/')
+    def index():
+        main()
+        # Add save button for manual saving
+        ui.button("Save Portfolio", on_click=save_on_demand()).style('position: fixed; top: 10px; right: 10px; z-index: 1000;')
+    
     ui.run(title='Marcus - Portfolio', port=8081, show=True)
+
