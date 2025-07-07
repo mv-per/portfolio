@@ -577,21 +577,27 @@
 
 /* Navigation Styles */
 .nav-container .nav-icon {
-    display: inline-block;
-    font-size: 1.5em;
-    /* Adjust icon size */
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: var(--transition);
+    display: none; /* Hide icons by default */
 }
 
-.nav-container .nav-icon:hover {
-    color: var(--primary-color);
-    /* Change color on hover */
-    transform: scale(1.2);
-    /* Slightly enlarge the icon */
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-    /* Add subtle shadow */
+/* Show icons only in mobile view */
+@media (max-width: 768px) {
+    .nav-container .nav-icon {
+        display: inline-block; /* Show icons on mobile */
+        font-size: 1.5em; /* Adjust icon size */
+        color: var(--text-secondary);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .nav-container .nav-icon:hover {
+        color: var(--primary-color);
+        transform: scale(1.1); /* Slight hover effect */
+    }
+
+    .nav-container button {
+        display: none; /* Hide text buttons on mobile */
+    }
 }
 
 /* Back to top button */
