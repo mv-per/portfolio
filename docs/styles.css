@@ -549,25 +549,87 @@
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {
     .content-wrapper {
-        padding: 0 16px;
+        padding: 0 12px; /* Reduced padding for smaller screens */
     }
 
     .welcome-title {
-        font-size: 2.2em; /* Reduced font size for smaller screens */
+        font-size: 2em; /* Reduced font size for smaller screens */
+        margin-bottom: 15px; /* Reduced margin */
+    }
+
+    .welcome-subtitle {
+        font-size: 1.2em; /* Reduced font size for smaller screens */
+        margin-bottom: 20px; /* Reduced margin */
+    }
+
+    .profile-pic {
+        width: 120px; /* Reduced size for smaller screens */
+        height: 120px;
+        border: 2px solid rgba(255, 255, 255, 0.8); /* Adjusted border thickness */
     }
 
     .section-title {
-        font-size: 2em; /* Reduced font size for smaller screens */
+        font-size: 1.8em; /* Reduced font size for smaller screens */
+        margin-bottom: 20px; /* Reduced margin */
     }
 
     .about-section,
     .projects-section,
     .resume-section {
-        padding: 20px; /* Reduced padding for smaller screens */
+        padding: 16px; /* Reduced padding for smaller screens */
+        margin: 20px 0; /* Reduced margin */
     }
 
     .project-card {
+        padding: 16px; /* Reduced padding for smaller screens */
+        margin: 10px 0; /* Reduced margin */
+        font-size: 1em; /* Adjusted font size */
+    }
+
+    .project-card h3 {
+        font-size: 1.4em; /* Reduced font size */
+        margin-bottom: 10px; /* Reduced margin */
+    }
+
+    .project-card p {
+        font-size: 0.9em; /* Reduced font size */
+        line-height: 1.4; /* Adjusted line height */
+        margin-bottom: 8px; /* Reduced margin */
+    }
+
+    .nav-container {
+        padding: 10px; /* Adjusted padding for smaller screens */
+        gap: 10px; /* Reduced gap between buttons */
+    }
+
+    .nav-container button {
+        font-size: 0.9em; /* Reduced font size for navigation buttons */
+        padding: 6px 12px; /* Adjusted padding */
+    }
+
+    .resume-section h3 {
+        font-size: 1.4em; /* Reduced font size */
+        margin-top: 30px; /* Adjusted margin */
+        margin-bottom: 20px; /* Adjusted margin */
+    }
+
+    .resume-section ul {
+        padding-left: 20px; /* Adjusted padding for list items */
+    }
+
+    .publication-card {
         padding: 20px; /* Reduced padding for smaller screens */
+        margin: 15px 0; /* Adjusted margin */
+    }
+
+    .publication-header h3 {
+        font-size: 1.4em; /* Reduced font size */
+    }
+
+    .back-to-top {
+        width: 48px; /* Reduced size */
+        height: 48px;
+        font-size: 1.2em; /* Adjusted font size */
     }
 }
 
